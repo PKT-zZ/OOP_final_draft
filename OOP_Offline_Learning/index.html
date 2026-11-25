@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Học C# và OOP qua bài tập lớn Quản lý nghiên cứu khoa học.">
+  <title>OOP Studio · Quản lý nghiên cứu khoa học</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="study.css">
+  <script defer src="content/lessons.js"></script>
+  <script defer src="content/core-lessons.js"></script>
+  <script defer src="content/project-lessons.js"></script>
+  <script defer src="content/defense-lessons.js"></script>
+  <script defer src="content/practice.js"></script>
+  <script defer src="content/defense-practice.js"></script>
+  <script defer src="scripts/progress.js"></script>
+  <script defer src="scripts/simulators.js"></script>
+  <script defer src="scripts/mock-defense.js"></script>
+  <script defer src="scripts/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Đến nội dung</a>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Điều hướng khóa học">
+      <a class="brand" href="#home">
+        <span class="brand-mark" aria-hidden="true">{ }</span>
+        <span><strong>OOP Studio</strong><small>Học qua bài tập lớn</small></span>
+      </a>
+      <label class="search-box">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input id="search" type="search" placeholder="Tìm bài, thuật ngữ…" aria-label="Tìm bài và thuật ngữ" aria-controls="search-results" autocomplete="off">
+      </label>
+      <div id="search-results" class="search-results" hidden></div>
+      <nav id="navigation" aria-label="Lộ trình và luyện tập"></nav>
+      <div class="sidebar-foot">
+        <span class="offline-dot" aria-hidden="true"></span>
+        <span>Môi trường học offline</span>
+      </div>
+    </aside>
+    <button class="scrim" id="scrim" type="button" aria-label="Đóng điều hướng" hidden></button>
+    <div class="workspace">
+      <header class="topbar">
+        <button id="menu-toggle" class="icon-button menu-toggle" type="button" aria-label="Mở điều hướng" aria-controls="sidebar" aria-expanded="false"><span aria-hidden="true">☰</span></button>
+        <div id="breadcrumb" class="breadcrumb">Tổng quan</div>
+        <div class="top-actions">
+          <a class="icon-button progress-link" href="#progress" aria-label="Tiến độ và dữ liệu" title="Tiến độ và dữ liệu"><span aria-hidden="true">◴</span></a>
+          <button id="theme" class="icon-button" type="button" aria-label="Giao diện tối" aria-pressed="false"><span aria-hidden="true">☾</span></button>
+        </div>
+      </header>
+      <div id="storage-notice" class="storage-notice" hidden>Trình duyệt đang chặn lưu tiến độ. Bạn có thể xuất tệp JSON trước khi đóng trang. <a href="#progress">Quản lý tiến độ</a></div>
+      <main id="main" class="main" tabindex="-1"></main>
+      <noscript><p class="noscript">Bật JavaScript trong trình duyệt để đọc bài và sử dụng các bài luyện tập.</p></noscript>
+      <footer class="footer"><span>QLNCKH · C# / .NET 8</span><span>Học OOP và luyện bảo vệ</span></footer>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
