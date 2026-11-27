@@ -1,0 +1,74 @@
+---
+config:
+  theme: base
+  look: classic
+  layout: dagre
+  themeCSS: |
+    /* Reserve a title band above UC01 and center the name in the system boundary. */
+    .system-boundary .boundary-body { y: -13px; height: 662px; }
+    .system-boundary .cluster-label { translate: 29.17px -12px; }
+    .system-boundary .cluster-label text { text-anchor: middle; font-size: 14px; }
+    /* Attach each association to the actor's arm and the ellipse after Dagre layout. */
+    /* Officer fan, upper then lower, stays outside the three-line label. */
+    path[data-id="edge-0"] { d: path("M49.23,259 L80,225 L124,51.5 L162.94,51.5"); }
+    path[data-id="edge-2"] { d: path("M56.23,259 L82,235 L124,185.5 L156.55,185.5"); }
+    path[data-id="edge-3"] { d: path("M63.23,259 L154.95,261.5"); }
+    path[data-id="edge-4"] { d: path("M61.23,259 L89,284 L166.5,337.5"); }
+    path[data-id="edge-6"] { d: path("M54.23,259 L88,295 L172.03,471.5"); }
+    path[data-id="edge-8"] { d: path("M48.23,259 L87,303 L184.95,605.5"); }
+    /* Researcher and chair associations use the arms closest to the system. */
+    path[data-id="edge-1"] { d: path("M364.95,118.5 L437,118.5 L515.69,242"); }
+    path[data-id="edge-7"] { d: path("M364.95,404.5 L438,404.5 L475,265 L519.69,242"); }
+    path[data-id="edge-5"] { d: path("M376.91,538.5 L439,538.5 L515.69,519"); }
+  usecase:
+    nodeSpacing: 9
+    rankSpacing: 47
+    wrappingWidth: 200
+    minNodeWidth: 140
+    diagramPadding: 12
+  themeVariables:
+    background: "#ffffff"
+    primaryColor: "#ffffff"
+    primaryTextColor: "#000000"
+    primaryBorderColor: "#000000"
+    secondaryColor: "#ffffff"
+    tertiaryColor: "#ffffff"
+    lineColor: "#000000"
+    clusterBkg: "#ffffff"
+    clusterBorder: "#000000"
+    fontFamily: Arial
+    fontSize: 17px
+---
+usecase-beta
+    direction LR
+    accTitle: Các ca sử dụng của hệ thống QLNCKH
+    accDescr: Tám nhóm ca sử dụng và ba vai trò. Hai thao tác của UC06 tách riêng để thể hiện quyền ghi điểm và xác nhận hoàn thành.
+
+    %% 28fb531: docs/scope.md §2–§3, Presentation/ConsoleMenu.cs:104–305.
+    %% UC08 là báo cáo và tra cứu chi tiết, không gộp mục 1 vào quyền UC08.
+    %% UC06a và UC06b là hai thao tác của UC06 trong đặc tả, không có include/extend.
+    actor Officer("`Chuyên<br/>viên<br/>QLNCKH`")
+    actor Researcher("Nhà nghiên cứu")
+    actor Chair("Chủ tịch hội đồng")
+
+    systemBoundary QLNCKH["QLNCKH"]
+      UC01("UC01 · Quản lý đơn vị và nhân sự")
+      UC02("UC02 · Đề xuất đề tài")
+      UC03("UC03 · Gán thành viên, duyệt đề tài")
+      UC04("UC04 · Khai báo nguồn, cấp kinh phí")
+      UC05("UC05 · Lập, phân công hội đồng")
+      UC06a("UC06a · Ghi điểm nghiệm thu")
+      UC06b("UC06b · Xác nhận hoàn thành")
+      UC07("UC07 · Ghi nhận kết quả")
+      UC08("UC08 · Báo cáo, tra cứu")
+    end
+
+    Officer -- UC01
+    UC02 -- Researcher
+    Officer -- UC03
+    Officer -- UC04
+    Officer -- UC05
+    UC06a -- Chair
+    Officer -- UC06b
+    UC07 -- Researcher
+    Officer -- UC08

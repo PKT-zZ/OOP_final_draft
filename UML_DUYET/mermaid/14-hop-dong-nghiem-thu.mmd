@@ -1,0 +1,31 @@
+classDiagram
+    direction TB
+
+    %% 28fb531: Business/Services/ProjectService.cs:42, Business/Interfaces/Repositories.cs:28,
+    %% Business/Services/ResultQueries.cs:23, Business/Interfaces/IResultRepository.cs:6.
+    %% HasScoredCouncil kiểm Score khác null; HasResearchOutput dùng OutputsOf.
+    class ProjectService {
+        +Complete(..., evidence : ICompletionEvidence) void
+    }
+    class ICompletionEvidence {
+        <<interface>>
+        +HasScoredCouncil(projectId : string) bool
+        +HasResearchOutput(projectId : string) bool
+    }
+    class ResultCompletionEvidence
+    class ResultQueries {
+        +OutputsOf(..., projectId : string)$ IReadOnlyList~ResearchOutput~
+    }
+    class IResultRepository {
+        <<interface>>
+        +PaperLinks : IReadOnlyCollection~ProjectPaperLink~
+        +Deliverables : IReadOnlyCollection~ProjectDeliverable~
+        +FindCouncilByProject(projectId : string) EvaluationCouncil?
+        +FindPaper(id : string) Paper?
+    }
+
+    ProjectService ..> ICompletionEvidence : Kiểm tra bằng chứng
+    ICompletionEvidence <|.. ResultCompletionEvidence
+    ResultCompletionEvidence --> IResultRepository : Tra điểm
+    ResultCompletionEvidence ..> ResultQueries : Kiểm tra đầu ra
+    ResultQueries ..> IResultRepository : Đọc đầu ra

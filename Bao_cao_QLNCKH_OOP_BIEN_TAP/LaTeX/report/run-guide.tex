@@ -1,0 +1,17 @@
+\subsection{Biên dịch, chạy và trình diễn}\label{app:run-guide}
+Dùng .NET 8 SDK và mở PowerShell trong thư mục mã nguồn của phiên bản nêu ở mục~\ref{sec:git-history}. Lệnh \code{dotnet --version} hiển thị phiên bản SDK đang dùng. Các lệnh dưới đây biên dịch ứng dụng và chạy bộ kiểm thử.
+\begin{ReportTerminal}
+$tests = '.\QLNCKH_OOP_FINAL.Tests\QLNCKH_OOP_FINAL.Tests.csproj'
+dotnet build $tests -m:1
+dotnet run --project $tests --no-build
+"Mã thoát test: $LASTEXITCODE"
+\end{ReportTerminal}
+Tạo gói phát hành trong thư mục mới bằng .NET 8 SDK. Máy Windows x64 cần .NET 8 Runtime x64 để chạy gói. Khi chuyển sang máy khác, sao chép cả thư mục phát hành.
+\begin{ReportTerminal}
+$demo = Join-Path $env:TEMP ('oop-demo-' + [guid]::NewGuid().ToString('N'))
+$app = '.\QLNCKH_OOP_FINAL.csproj'
+dotnet publish $app -c Release -r win-x64 --self-contained false -o $demo
+if ($LASTEXITCODE -eq 0) { & (Join-Path $demo 'QLNCKH_OOP_FINAL.exe') }
+\end{ReportTerminal}
+
+Giữ nguyên vị trí của \code{config/appsettings.json} và \code{Data/seed.json} để ứng dụng tạo tệp làm việc từ dữ liệu mẫu ở lần chạy đầu. Để kiểm tra dữ liệu sau khi thoát, mở lại tệp thực thi trong cùng thư mục phát hành. Mục~\ref{sec:demo-a} tóm tắt kịch bản, còn phần 5 của README trong kho mã nguồn hướng dẫn cách thử nhanh. Các dòng \code{stdin} trong \code{demo-full-console.txt} ghi lại dữ liệu nhập của cả 39 lượt.

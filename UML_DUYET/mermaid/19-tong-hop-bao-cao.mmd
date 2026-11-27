@@ -1,0 +1,22 @@
+sequenceDiagram
+    %% UC08, ví dụ mục 11. ConsoleMenu.cs:219–226,323–337;
+    %% ReportService.cs:10–16; FundingByProjectStrategy.cs:5–12.
+    actor A as Chuyên viên
+    participant M as Menu
+    participant R as ReportService
+
+    A->>M: Chọn báo cáo mục 11
+    create participant S as FundingByProjectStrategy
+    M--)S: «create»
+    participant K as Kho đề tài
+    %% mermaid-print.css dời nhãn lời gọi tự thân sang phải đường sống Menu.
+    M->>M: PrintReport(strategy)
+    M->>R: Generate(user, strategy)
+    Note over R: Quyền Officer
+    R->>S: BuildRows()
+    S->>K: Đọc Projects
+    K-->>S: Danh sách đề tài
+    Note over S: Sắp theo mã, đọc tổng tiền<br/>Mỗi đề tài tạo một ReportRow
+    S-->>R: Các dòng tổng hợp
+    R-->>M: rows
+    M-->>A: Hiển thị báo cáo

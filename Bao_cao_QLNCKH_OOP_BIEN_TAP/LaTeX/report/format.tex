@@ -1,0 +1,262 @@
+% Định dạng dùng chung cho báo cáo. Biên dịch bằng XeLaTeX.
+\usepackage[margin=2.54cm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Times New Roman}
+  {\setmainfont{Times New Roman}}
+  {\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{Consolas}
+  {\setmonofont{Consolas}[Scale=MatchLowercase]}
+  {\setmonofont{Latin Modern Mono}[Scale=MatchLowercase]}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{booktabs,tabularx,longtable}
+\usepackage{xcolor}
+\usepackage{fvextra,needspace}
+
+\usepackage[hidelinks,unicode]{hyperref}
+
+\onehalfspacing
+\setlength{\parindent}{1.27cm}
+\setlength{\parskip}{0pt}
+\emergencystretch=1.5em
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+
+\renewcommand{\contentsname}{MỤC LỤC}
+\renewcommand{\figurename}{Hình}
+\renewcommand{\tablename}{Bảng}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+
+\makeatletter
+\newcommand{\ps@report}{%
+  \let\@oddfoot\@empty
+  \let\@evenfoot\@empty
+  \def\@oddhead{\hfill\normalfont\thepage}%
+  \let\@evenhead\@oddhead
+}
+\pagestyle{report}
+
+% Tiêu đề chương có tiền tố trong thân bài, mục lục vẫn dùng số 1, 2, ...
+\newcommand{\ReportSectionPrefix}{Chương }
+\renewcommand{\@seccntformat}[1]{%
+  \ifcsname report@prefix@#1\endcsname\csname report@prefix@#1\endcsname\fi
+  \csname the#1\endcsname
+  \ifcsname report@prefix@#1\endcsname.\enspace\else\quad\fi
+}
+\let\report@prefix@section\ReportSectionPrefix
+
+% Khoảng cách trước đề mục dương: thụt đầu dòng cả đoạn sau đề mục.
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+  {14pt plus 3pt minus 2pt}{5pt plus 1pt}%
+  {\normalfont\fontsize{16}{20}\selectfont\bfseries\raggedright}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+  {10pt plus 2pt minus 1pt}{3pt plus 1pt}%
+  {\normalfont\fontsize{14}{17}\selectfont\bfseries\raggedright}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
+  {8pt plus 2pt minus 1pt}{2pt plus 1pt}%
+  {\normalfont\normalsize\bfseries\raggedright}}
+
+\renewcommand{\tableofcontents}{%
+  \section*{\centering\contentsname}%
+  \begingroup
+    \singlespacing\small
+    \renewcommand{\@pnumwidth}{2.5em}%
+    \renewcommand{\@tocrmarg}{3.5em}%
+    \@starttoc{toc}%
+  \endgroup
+}
+\renewcommand{\l@section}[2]{%
+  \addpenalty\@secpenalty
+  \addvspace{3pt plus 1pt}%
+  \@dottedtocline{1}{0em}{1.85em}{\bfseries #1}{\bfseries #2}%
+}
+\renewcommand{\l@subsection}{\@dottedtocline{2}{1.85em}{2.7em}}
+\newcommand{\l@reportappendix}[2]{%
+  \addpenalty\@secpenalty
+  \addvspace{3pt plus 1pt}%
+  \@dottedtocline{1}{0em}{5.6em}{\bfseries #1}{\bfseries #2}%
+}
+\newcommand{\toclevel@reportappendix}{1}
+
+\newcommand{\ReportListOfFigures}{%
+  \ReportSection{Danh mục hình}%
+  {\small\singlespacing\@starttoc{lof}}%
+}
+\newcommand{\ReportListOfTables}{%
+  \ReportSection{Danh mục bảng}%
+  {\small\singlespacing\@starttoc{lot}}%
+}
+
+% Chú thích theo APA cho figure, table và longtable.
+\newcommand{\ReportCaptionText}[2]{%
+  \raggedright\setlength{\parindent}{0pt}%
+  #1\textit{#2}\par
+}
+\renewcommand{\@makecaption}[2]{%
+  \vskip\abovecaptionskip
+  \noindent\parbox[t]{\linewidth}{%
+    \small\singlespacing\ReportCaptionText{\textbf{#1}\par}{#2}}\par
+  \vskip\belowcaptionskip
+}
+\renewcommand{\LT@makecaption}[3]{%
+  \LT@mcol\LT@cols l{\hbox to\z@{%
+    \parbox[t]{\LTcapwidth}{\small\singlespacing
+      \ReportCaptionText{#1{\textbf{#2}\par}}{#3}\medskip}%
+    \hss}}%
+}
+% Giữ hình và thuyết minh cùng thứ tự đọc khi float có thể trôi quá xa.
+\newenvironment{ReportFigureHere}{%
+  \par\medskip\noindent\begin{minipage}{\linewidth}\def\@captype{figure}%
+}{%
+  \end{minipage}\par\medskip
+}
+\newenvironment{ReportTableHere}{%
+  \par\medskip\noindent\begin{minipage}{\linewidth}\def\@captype{table}%
+}{%
+  \end{minipage}\par\medskip
+}
+\makeatother
+
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{7pt}
+\setlength{\LTcapwidth}{\textwidth}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt plus 1fill}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\ReportNote}[1]{%
+  \par\smallskip{\small\singlespacing\raggedright
+    \noindent\textit{Ghi chú.} #1\par}%
+}
+\newcommand{\ReportImage}[2][]{%
+  {\centering\includegraphics[#1,width=\linewidth,height=.68\textheight,keepaspectratio]{#2}\par}%
+}
+\newcommand{\ReportUmlGraphic}[2]{%
+  {\centering
+   \edef\ReportUmlOptions{width=\the\linewidth,height=\the\dimexpr#1\textheight\relax,
+     keepaspectratio,clip,trim=\csname ReportUmlTrim-#2\endcsname}%
+   \expandafter\includegraphics\expandafter[\ReportUmlOptions]{report/figures/#2.pdf}\par}%
+}
+\newcommand{\ReportUmlTrim}[2]{\expandafter\def\csname ReportUmlTrim-#1\endcsname{#2}}
+\newcommand{\ReportUml}[4][.90]{%
+  \begin{figure}[!htbp]
+    \caption{#4}\label{#3}%
+    \ReportUmlGraphic{#1}{#2}%
+  \end{figure}%
+}
+\newcommand{\ReportWideUml}[3]{%
+  \begin{landscape}
+    \thispagestyle{empty}%
+    \begin{ReportFigureHere}
+      \vbox to 0pt{\vss\hbox to \linewidth{\hfill\thepage}\kern 12pt}%
+      \nointerlineskip
+      \caption{#3}\label{#2}%
+      \ReportUmlGraphic{.90}{#1}%
+    \end{ReportFigureHere}
+  \end{landscape}%
+}
+% Giữ chuỗi Unicode đầu vào khi sao chép từ PDF, kể cả dấu - của Consolas.
+\newcommand{\ReportTechnicalText}{\XeTeXgenerateactualtext=1\relax}
+\newcommand{\code}[1]{\texttt{\ReportTechnicalText\detokenize{#1}}}
+
+% XeLaTeX đọc trực tiếp Unicode trong khối verbatim.
+\newcommand{\ReportMonoSize}{\fontsize{10}{12}\selectfont}
+\newcommand{\ReportCodeSize}{\fontsize{9.5}{11.5}\selectfont}
+\definecolor{ReportCodeFocus}{gray}{0.94}
+\fvset{
+  fontfamily=tt,
+  fontsize=\ReportMonoSize,
+  formatcom=\ReportTechnicalText,
+  baselinestretch=1,
+  tabsize=4,
+  obeytabs=true,
+  breaklines=true,
+  breakanywhere=false,
+  breakautoindent=true,
+  breakindent=1.5em,
+  breaksymbolleft={},
+  highlightcolor=ReportCodeFocus,
+  listparameters={\setlength{\topsep}{4pt}\setlength{\partopsep}{0pt}}
+}
+\renewcommand{\theFancyVerbLine}{\scriptsize\arabic{FancyVerbLine}}
+% Trong đoạn trích có commandchars=§«», giữ literal liền nhau và cho phép ngắt trước nó.
+\newcommand{\ReportLiteral}[1]{\allowbreak\mbox{#1}}
+
+\newcounter{reportcode}
+\newcommand{\ReportCodeHeading}[2]{%
+  \par\Needspace{5\baselineskip}%
+  \refstepcounter{reportcode}\label{#2}%
+  \smallskip
+  {\small\singlespacing\raggedright\noindent
+    \textbf{Mã nguồn \thereportcode}\par\nopagebreak
+    \noindent\textit{#1}\par}%
+  \nopagebreak
+}
+\newenvironment{ReportCode}[3][]{%
+  \VerbatimEnvironment
+  \ReportCodeHeading{#2}{#3}%
+  \begin{Verbatim}[fontsize=\ReportCodeSize,numbers=left,xleftmargin=1.7em,numbersep=6pt,#1]%
+}{\end{Verbatim}}
+\newcommand{\ReportCodeFile}[4][]{%
+  \ReportCodeHeading{#2}{#3}%
+  \VerbatimInput[fontsize=\ReportCodeSize,numbers=left,xleftmargin=1.7em,numbersep=6pt,#1]{#4}%
+}
+\DefineVerbatimEnvironment{ReportTerminal}{Verbatim}{numbers=none}
+\DefineVerbatimEnvironment{ReportJson}{Verbatim}{numbers=none}
+\DefineVerbatimEnvironment{ReportOutput}{Verbatim}{numbers=none}
+\newcommand{\ReportCodeRef}[1]{Mã nguồn~\ref{#1}}
+\newcommand{\ReportCodeSource}[1]{%
+  \par\smallskip{\small\singlespacing\noindent\textit{Nguồn mã.} #1\par}%
+}
+
+\newcommand{\ReportCover}[1]{%
+  \hypersetup{pageanchor=false}%
+  \begingroup
+    \pagestyle{empty}\thispagestyle{empty}%
+    \input{#1}\clearpage
+  \endgroup
+  \hypersetup{pageanchor=true}%
+}
+\newcommand{\ReportChapter}[1]{\clearpage\section{#1}}
+
+% Đề mục không đánh số vẫn xuất hiện trong mục lục.
+\newcommand{\ReportSection}[1]{%
+  \section*{#1}%
+  \addcontentsline{toc}{section}{#1}%
+}
+\newcommand{\ReportReferenceHeading}{%
+  \section*{\centering TÀI LIỆU THAM KHẢO}%
+  \addcontentsline{toc}{section}{Tài liệu tham khảo}%
+}
+% Khai báo mỗi nguồn một lần để trích dẫn và tạo mục tương ứng trong danh mục.
+\makeatletter
+\newcommand{\ReportSourceList}{}
+\newcommand{\ReportDeclareSource}[4]{%
+  \@namedef{report@cite@#1}{\hyperlink{source:#1}{#2, #3}}%
+  \g@addto@macro\ReportSourceList{\ReportSourceEntry{#1}{#4}}%
+}
+\newcommand{\ReportCite}[1]{(\@nameuse{report@cite@#1})}
+\makeatother
+\newcommand{\ReportSourceEntry}[2]{%
+  \par\noindent\hangindent=1.27cm\hangafter=1%
+  \hypertarget{source:#1}{}#2\par%
+}
+% Giữ mỗi URL đủ ngắn trên một dòng và dùng văn bản gốc khi sao chép PDF.
+\newcommand{\ReportReferenceURL}[1]{\href{#1}{\mbox{\code{#1}}}}
+\newcommand{\ReportBibliography}{%
+  \clearpage
+  \ReportReferenceHeading
+  \ReportSourceList
+}
+
+% Bắt đầu phụ lục mới, giữ A.1, A.1.1 cho các đề mục con.
+\newcommand{\ReportAppendix}[1]{%
+  \clearpage
+  \refstepcounter{section}%
+  \section*{Phụ lục \thesection. #1}%
+  \addcontentsline{toc}{reportappendix}{\protect\numberline{Phụ lục \thesection}#1}%
+}

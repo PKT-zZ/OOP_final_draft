@@ -1,0 +1,23 @@
+sequenceDiagram
+    %% mermaid-print.css đặt nhãn tra đề tài và gán thành viên giữa hai đường sống.
+    %% UC03 - Gán thành viên đề tài (mục 6)
+    %% Dựa trên docs/uml.md §5.1 tại 28fb531.
+    %% ConsoleMenu.cs:171-183, ProjectService.cs:24-32, projects.cs:68-77.
+    %% Menu = ConsoleMenu, dịch vụ = ProjectService, đề tài = ResearchProject.
+    actor CV as Chuyên viên
+    participant UI as Menu
+    participant S as Dịch vụ đề tài
+    participant N as Kho nhân sự
+    participant K as Kho đề tài
+    participant P as Đề tài
+
+    CV->>UI: Gán thành viên
+    UI->>S: AssignMember(...)
+    Note over S: Quyền Officer
+    S->>N: FindResearcher(researcherId)
+    S->>K: FindProject(projectId)
+    S->>P: AddMember(researcherId, role)
+    Note over P: Đề tài Pending<br/>Chưa có mã người này<br/>Tối đa một Chủ nhiệm
+    S->>K: Save(project)
+    S-->>UI: Hoàn tất
+    UI-->>CV: Đã gán thành viên

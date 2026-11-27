@@ -1,0 +1,42 @@
+---
+config:
+  sequence:
+    actorMargin: 8
+    width: 50
+    messageMargin: 8
+    noteMargin: 7
+---
+sequenceDiagram
+    %% UC04 - Phân bổ kinh phí (mục 9)
+    %% Dựa trên docs/uml.md §5.2 tại 28fb531. Hình bắt đầu sau khi nguồn đã có.
+    %% ConsoleMenu.cs:199-207, FundingService.cs:18-49, Funding.cs:23-38.
+    actor CV as Chuyên viên
+    %% Menu = ConsoleMenu, dịch vụ = FundingService, đề tài = ResearchProject.
+    participant UI as Menu
+    participant S as Dịch vụ<br/>kinh phí
+    participant K as Kho<br/>đề tài
+    participant P as Đề tài
+
+    CV->>UI: Mục 9
+    UI->>S: Allocate(...)
+    Note over S: Quyền Officer
+    S->>K: FindProject(...)
+    Note over S: Pending hoặc Active
+    S->>K: FindSource(...)
+    S->>K: Đọc Projects
+    Note over S: Mã đợt chuẩn hóa,<br/>duy nhất toàn hệ thống
+    create participant A as Đợt cấp
+    S--)A: «create»
+    Note over A: Số tiền dương
+    S->>K: Đọc Projects
+    Note over S: Tổng mới toàn hệ thống<br/>không tràn kiểu decimal
+    %% a là đối tượng allocation tạo ở thông điệp «create».
+    S->>P: AddAllocation(a)
+    S->>K: Save(project)
+    S-->>UI: allocation
+    UI->>S: TotalForProject(...)
+    S->>K: FindProject(...)
+    %% Đọc thuộc tính TotalFunding của đề tài.
+    S->>P: TotalFunding
+    S-->>UI: Tổng của đề tài
+    UI-->>CV: Hiển thị kết quả

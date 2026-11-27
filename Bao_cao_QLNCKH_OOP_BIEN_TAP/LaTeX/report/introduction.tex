@@ -1,0 +1,29 @@
+\ReportChapter{Giới thiệu bài tập lớn}\label{sec:intro}
+\subsection{Bối cảnh và mục tiêu}\label{sec:context}
+
+Đề tài là hồ sơ trung tâm của chương trình. Từ một hồ sơ, chuyên viên quản lý nghiên cứu khoa học (chuyên viên QLNCKH) cần biết ai tham gia, đề tài nhận kinh phí từ những nguồn nào, hội đồng đã chấm điểm chưa và kết quả nghiên cứu gồm những gì. Hồ sơ được bổ sung dần từ lúc nhà nghiên cứu gửi đề xuất đến khi chuyên viên xác nhận hoàn thành. Sau nghiệm thu, người dùng vẫn cần tra cứu lại thông tin đã ghi nhận.
+
+Mục tiêu thiết kế là xác định thông tin và quy tắc thuộc về từng đối tượng. Chẳng hạn, vai trò chủ nhiệm gắn với một đề tài cụ thể, còn một nguồn tài trợ có thể cấp kinh phí cho nhiều đề tài. Các thao tác như phê duyệt và nghiệm thu cũng phụ thuộc vào giai đoạn thực hiện. Nhóm dựa vào những khác biệt này để xây dựng các lớp, tổ chức quan hệ giữa chúng và phân công nghiệp vụ giữa hai phân hệ.
+
+\subsection{Phạm vi và phân công}\label{sec:ownership}
+
+Ứng dụng chạy trên .NET 8, sử dụng giao diện dòng lệnh và lưu dữ liệu cục bộ dưới dạng JSON. Chương trình mô phỏng ba vai trò gồm chuyên viên QLNCKH, nhà nghiên cứu và chủ tịch hội đồng. Phạm vi gồm tám nhóm ca sử dụng, chia đều theo đầu mối phụ trách ở Bảng~\ref{tab:ownership}. Riêng UC06 có hai thao tác với hai quyền khác nhau là UC06a, ghi điểm nghiệm thu, và UC06b, xác nhận hoàn thành.
+
+\begin{ReportTableHere}
+  \centering
+  \caption{Phân công theo nhóm ca sử dụng}
+  \label{tab:ownership}
+  \small
+  \singlespacing
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.37\linewidth}L@{}}
+    \toprule
+    \textbf{Thành viên} & \textbf{Phạm vi thiết kế} \\
+    \midrule
+    \textbf{NGUYỄN KHÁNH TOÀN}\newline Thành viên A (UC01--UC04) & Quản lý nhân sự, đề xuất và phê duyệt đề tài, phân bổ kinh phí. Cài đặt phần chuyển trạng thái của UC06b và hai cách tổng hợp kinh phí của UC08. \\
+    \textbf{NGUYỄN VIỆT HOÀNG}\newline Thành viên B (UC05--UC08) & Quản lý hội đồng, ghi điểm UC06a, cung cấp dữ liệu kiểm tra cho UC06b và ghi đầu ra. Cài đặt tổng hợp đầu ra, dịch vụ báo cáo và tra cứu của UC08. \\
+    \bottomrule
+  \end{tabularx}
+\end{ReportTableHere}
+
+Mã đề tài là điểm chung giữa hai phân hệ. Ở UC06b, dịch vụ đề tài kiểm tra điểm và đầu ra do phân hệ B cung cấp trước khi chuyển trạng thái. Ở UC08, dịch vụ báo cáo dùng cùng giao diện cho các cách tổng hợp do hai thành viên viết. Kịch bản P003 ở mục~\ref{sec:demo-a} kiểm tra sự phối hợp này từ đề xuất đến lúc đọc lại kết quả.

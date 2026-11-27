@@ -1,0 +1,69 @@
+---
+config:
+  layout: elk
+  elk:
+    lineHops: gap
+  themeCSS: |
+    .edgeTerminals.edgeTerminals { font-size: 18px !important; }
+  class:
+    nodeSpacing: 18
+    rankSpacing: 22
+---
+classDiagram
+    direction TB
+    accTitle: Các lớp kết quả nghiên cứu
+    accDescr: Paper và ProjectDeliverable kế thừa ResearchOutput. Tác giả và liên kết của Paper có bội số một hoặc nhiều trong hồ sơ hợp lệ đã lưu.
+
+    %% Kế thừa từ docs/uml.md §2. Đối chiếu outputs.cs và JsonResearchRepository.cs:161–185.
+    %% ResearchProject và Researcher là lớp tham chiếu, chỉ hiện mã định danh.
+    class ResearchOutput {
+        <<abstract>>
+        +Id : string
+        +Title : string
+        +Validate() void*
+        +GetDisplaySummary() string*
+    }
+    class Paper {
+        +Doi : string [0..1]
+        +Publisher : string
+        +PublishedYear : int
+        +AddAuthor(...) void
+        +Validate() void
+        +GetDisplaySummary() string
+    }
+    class PaperAuthor {
+        +PaperId : string
+        +ResearcherId : string
+        +AuthorOrder : int
+        +IsCorresponding : bool
+    }
+    class ProjectPaperLink {
+        +ProjectId : string
+        +PaperId : string
+    }
+    class ProjectDeliverable {
+        +ProjectId : string
+        +TypeId : string
+        +Quantity : int
+        +Validate() void
+        +GetDisplaySummary() string
+    }
+    class DeliverableType {
+        +Id : string
+        +Name : string
+    }
+    class ResearchProject {
+        +Id : string
+    }
+    class Researcher {
+        +Id : string
+    }
+
+    ResearchOutput <|-- Paper
+    ResearchOutput <|-- ProjectDeliverable
+    Paper "1" *-- "1..*" PaperAuthor
+    Paper "1" -- "1..*" ProjectPaperLink
+    Researcher "1" -- "0..*" PaperAuthor
+    ResearchProject "1" -- "0..*" ProjectPaperLink
+    ProjectDeliverable "0..*" -- "1" ResearchProject
+    ProjectDeliverable "0..*" -- "1" DeliverableType

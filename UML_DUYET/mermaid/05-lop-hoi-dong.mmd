@@ -1,0 +1,38 @@
+---
+config:
+  themeCSS: |
+    .edgeTerminals.edgeTerminals { font-size: 18px !important; }
+---
+classDiagram
+    direction TB
+    accTitle: Các lớp nghiệp vụ hội đồng nghiệm thu
+    accDescr: Mỗi đề tài có tối đa một hội đồng. Hội đồng quản lý các phân công. Điểm đã ghi, kể cả điểm 0, khóa danh sách thành viên.
+
+    %% Kế thừa từ docs/uml.md §2. Đối chiếu evaluation.cs:7–64 và EvaluationService.cs:10–46.
+    %% ResearchProject và Researcher xuất hiện với thuộc tính chọn lọc.
+    class ResearchProject {
+        +Id : string
+        +Status : ProjectStatus
+    }
+    class EvaluationCouncil {
+        +Id : string
+        +ProjectId : string
+        +EvaluationDate : DateOnly
+        +Score : decimal [0..1]
+        +/ChairmanId : string [0..1]
+        +AddMember(researcherId: string, role: CouncilRole) void
+        +RecordScore(actorResearcherId: string, score: decimal) void
+    }
+    class CouncilMembership {
+        +CouncilId : string
+        +ResearcherId : string
+        +Role : CouncilRole
+    }
+    class Researcher {
+        +Id : string
+        +FullName : string
+    }
+
+    ResearchProject "1" -- "0..1" EvaluationCouncil
+    EvaluationCouncil "1" *-- "0..*" CouncilMembership
+    Researcher "1" -- "0..*" CouncilMembership

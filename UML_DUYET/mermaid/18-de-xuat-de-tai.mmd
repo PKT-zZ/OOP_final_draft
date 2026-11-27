@@ -1,0 +1,24 @@
+sequenceDiagram
+    %% mermaid-print.css đặt nhãn các thông điệp đi qua Kho nhân sự về bên trái đường sống đó.
+    %% UC02, mục 5. ConsoleMenu.cs:161–170; ProjectService.cs:7–22; Projects.cs:50,57–65.
+    %% Luồng đề xuất hợp lệ. Tận dụng docs/uml.md §5.1.
+    actor A as Nhà nghiên cứu
+    participant M as Menu
+    participant S as ProjectService
+    participant N as Kho nhân sự
+    participant K as Kho đề tài
+
+    A->>M: Nhập đề xuất
+    M->>S: ProposeProject(...)
+    Note over S: Quyền Researcher<br/>Mã người dùng từ user.ResearcherId
+    S->>N: FindResearcher(researcherId)
+    S->>K: FindCategory(categoryId)
+    Note over S: Chuẩn hóa mã đề tài
+    S->>K: FindProject(normalizedId)
+    Note over S: Mã đề tài chưa có
+    create participant P as Đề tài
+    S--)P: new ResearchProject(...)
+    Note over P: Tên và ngày hợp lệ<br/>Status = Pending
+    S->>K: Save(project)
+    S-->>M: project
+    M-->>A: Hiển thị mã và trạng thái

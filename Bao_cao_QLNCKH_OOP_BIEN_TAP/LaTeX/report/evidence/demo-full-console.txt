@@ -1,0 +1,2937 @@
+GitHub main: 28fb531f270ac358725c6c35e261be164b4016f6
+
+01. Publish win-x64 từ thư mục làm việc khác; khởi tạo seed | exit=0 | JSON thay đổi=True
+stdin=["1", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+Mã     Tên đề tài                                 Trạng thái SL thành viên
+──────────────────────────────────────────────────────────────────────────
+P001   Ứng dụng học máy trong phân loại văn bản … Active     2
+P002   Nghiên cứu tối ưu thuật toán tìm kiếm trê… Active     3
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+02. UC01 xem lịch sử seed | exit=0 | JSON thay đổi=False
+stdin=["10", "D01", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đơn vị: 
+Lịch sử lãnh đạo đơn vị [D01]:
+  R001: 2022-01-01 → nay
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+03. UC01 tạo đơn vị | exit=0 | JSON thay đổi=True
+stdin=["3", "D03", "Khoa Du lieu", "2020-01-01", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đơn vị: Tên đơn vị: Ngày thành lập (yyyy-MM-dd): Đã lưu thông tin đơn vị.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+04. UC01 đổi tên; dùng lại mã khác hoa thường | exit=0 | JSON thay đổi=True
+stdin=["3", "d03", "Khoa Khoa hoc du lieu", "2021-01-01", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đơn vị: Tên đơn vị: Ngày thành lập (yyyy-MM-dd): Đã lưu thông tin đơn vị.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+05. UC01 tạo nhà nghiên cứu | exit=0 | JSON thay đổi=True
+stdin=["4", "R005", "D03", "Nguyen Van Thu", "thu@university.edu.vn", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã nhà nghiên cứu: Mã đơn vị: Họ và tên: Email: Đã lưu thông tin nhà nghiên cứu.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+06. UC01 cập nhật nhà nghiên cứu | exit=0 | JSON thay đổi=True
+stdin=["4", "r005", "D03", "Nguyen Thi Thu", "nvthu@university.edu.vn", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã nhà nghiên cứu: Mã đơn vị: Họ và tên: Email: Đã lưu thông tin nhà nghiên cứu.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+07. UC01 giữ hồ sơ và từ chối email trùng | exit=0 | JSON thay đổi=False
+stdin=["4", "R006", "D03", "Trung Mail", "NVTHU@university.edu.vn", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã nhà nghiên cứu: Mã đơn vị: Họ và tên: Email: [Lỗi] Email đã được sử dụng.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+08. UC02 vai Chuyên viên không được đề xuất | exit=0 | JSON thay đổi=False
+stdin=["5", "P003", "C01", "Nghien cuu phan loai van ban", "2026-01-01", "2026-12-31", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài mới: Mã loại đề tài (C01 = Cấp trường, C02 = Cấp bộ): Tên đề tài: Ngày bắt đầu (yyyy-MM-dd): Ngày kết thúc dự kiến (yyyy-MM-dd, Enter để bỏ qua): [Lỗi] Vai trò hiện tại không được thực hiện thao tác này.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+09. UC02 nhà nghiên cứu ảo không được đề xuất | exit=0 | JSON thay đổi=False
+stdin=["2", "2", "R999", "5", "P003", "C01", "Nghien cuu phan loai van ban", "2026-01-01", "2026-12-31", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (R001/R002/R003/R004): Đã chuyển sang vai trò Nhà nghiên cứu [R999].
+
+Vai trò hiện tại: Nhà nghiên cứu [R999]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài mới: Mã loại đề tài (C01 = Cấp trường, C02 = Cấp bộ): Tên đề tài: Ngày bắt đầu (yyyy-MM-dd): Ngày kết thúc dự kiến (yyyy-MM-dd, Enter để bỏ qua): [Lỗi] Hồ sơ nhà nghiên cứu không tồn tại.
+
+Vai trò hiện tại: Nhà nghiên cứu [R999]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+10. UC02 đề xuất | exit=0 | JSON thay đổi=True
+stdin=["2", "2", "R001", "5", "P003", "C01", "Nghien cuu phan loai van ban", "2026-01-01", "2026-12-31", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (R001/R002/R003/R004): Đã chuyển sang vai trò Nhà nghiên cứu [R001].
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài mới: Mã loại đề tài (C01 = Cấp trường, C02 = Cấp bộ): Tên đề tài: Ngày bắt đầu (yyyy-MM-dd): Ngày kết thúc dự kiến (yyyy-MM-dd, Enter để bỏ qua): Đã tạo đề tài [P003] ở trạng thái [Pending].
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+11. UC02 trùng mã có khoảng trắng và khác hoa thường | exit=0 | JSON thay đổi=False
+stdin=["2", "2", "R001", "5", "  p003  ", "C01", "Nghien cuu phan loai van ban", "2026-01-01", "2026-12-31", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (R001/R002/R003/R004): Đã chuyển sang vai trò Nhà nghiên cứu [R001].
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài mới: Mã loại đề tài (C01 = Cấp trường, C02 = Cấp bộ): Tên đề tài: Ngày bắt đầu (yyyy-MM-dd): Ngày kết thúc dự kiến (yyyy-MM-dd, Enter để bỏ qua): [Lỗi] Mã đề tài đã tồn tại.
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+12. UC03 thử duyệt thiếu chủ nhiệm | exit=0 | JSON thay đổi=False
+stdin=["7", "P003", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài cần phê duyệt: [Lỗi] Đề tài cần đúng một chủ nhiệm trước khi duyệt.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+13. UC05 thử lập hội đồng khi Pending | exit=0 | JSON thay đổi=False
+stdin=["13", "HD03", "P003", "2026-11-22", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Mã đề tài: Ngày nghiệm thu (yyyy-MM-dd): [Lỗi] Chỉ lập hội đồng cho đề tài đang thực hiện.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+14. UC03 gán nhà nghiên cứu không tồn tại | exit=0 | JSON thay đổi=False
+stdin=["6", "P003", "R999", "1", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài: Mã nhà nghiên cứu: Vai trò: 1 = Chủ nhiệm, 2 = Thành viên: [Lỗi] Nhà nghiên cứu không tồn tại.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+15. UC03 thêm chủ nhiệm và thành viên | exit=0 | JSON thay đổi=True
+stdin=["6", "P003", "R001", "1", "6", "P003", "R005", "2", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài: Mã nhà nghiên cứu: Vai trò: 1 = Chủ nhiệm, 2 = Thành viên: Đã gán thành viên vào đề tài.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài: Mã nhà nghiên cứu: Vai trò: 1 = Chủ nhiệm, 2 = Thành viên: Đã gán thành viên vào đề tài.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+16. UC03 duyệt thành Active | exit=0 | JSON thay đổi=True
+stdin=["7", "P003", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài cần phê duyệt: Đề tài [P003] đã được phê duyệt và chuyển sang trạng thái Active.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+17. UC03 duyệt lần thứ hai | exit=0 | JSON thay đổi=False
+stdin=["7", "P003", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài cần phê duyệt: [Lỗi] Đề tài đã được duyệt.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+18. UC04 thêm nguồn và hai đợt | exit=0 | JSON thay đổi=True
+stdin=["8", "F03", "Quy ho tro nghien cuu", "Tai tro ngoai", "9", "A004", "P003", "F01", "100000000", "2026-02-01", "9", "A005", "P003", "F03", "150000000", "2026-06-01", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã nguồn: Tên nguồn: Loại nguồn (Nội bộ / Ngân sách nhà nước / Tài trợ ngoài): Đã thêm nguồn kinh phí.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đợt phân bổ: Mã đề tài: Mã nguồn kinh phí (F01/F02): Số tiền VND (nhập số nguyên, ví dụ 1000000): Ngày phân bổ (yyyy-MM-dd): Đã phân bổ kinh phí. Tổng kinh phí đề tài [P003]: 100,000,000 đ
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đợt phân bổ: Mã đề tài: Mã nguồn kinh phí (F01/F02): Số tiền VND (nhập số nguyên, ví dụ 1000000): Ngày phân bổ (yyyy-MM-dd): Đã phân bổ kinh phí. Tổng kinh phí đề tài [P003]: 250,000,000 đ
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+19. UC04 từ chối tiền âm/quá lớn, nhập lại rồi từ chối mã đợt bị trùng | exit=0 | JSON thay đổi=False
+stdin=["9", " a004 ", "P001", "F01", "-1", "79228162514264337593543950336", "100000000", "2026-03-03", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đợt phân bổ: Mã đề tài: Mã nguồn kinh phí (F01/F02): Số tiền VND (nhập số nguyên, ví dụ 1000000): [Lỗi] Hãy nhập số đồng nguyên dương trong phạm vi decimal, chỉ dùng các chữ số từ 0 đến 9.
+Số tiền VND (nhập số nguyên, ví dụ 1000000): [Lỗi] Hãy nhập số đồng nguyên dương trong phạm vi decimal, chỉ dùng các chữ số từ 0 đến 9.
+Số tiền VND (nhập số nguyên, ví dụ 1000000): Ngày phân bổ (yyyy-MM-dd): [Lỗi] Mã phân bổ đã tồn tại.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+20. UC05 lập hội đồng và thêm hai vai trò | exit=0 | JSON thay đổi=True
+stdin=["13", "HD03", "P003", "2026-11-22", "14", "HD03", "R002", "1", "14", "HD03", "R003", "2", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Mã đề tài: Ngày nghiệm thu (yyyy-MM-dd): Đã lập hội đồng [HD03] cho đề tài [P003].
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Mã nhà nghiên cứu: Vai trò: 1 = Chủ tịch, 2 = Ủy viên: Đã gán thành viên vào hội đồng.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Mã nhà nghiên cứu: Vai trò: 1 = Chủ tịch, 2 = Ủy viên: Đã gán thành viên vào hội đồng.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+21. UC05 không lập hội đồng thứ hai | exit=0 | JSON thay đổi=False
+stdin=["13", "HD04", "P003", "2026-11-22", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Mã đề tài: Ngày nghiệm thu (yyyy-MM-dd): [Lỗi] Đề tài đã có hội đồng nghiệm thu.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+22. UC05 không gán chủ tịch thứ hai | exit=0 | JSON thay đổi=False
+stdin=["14", "HD03", "R004", "1", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Mã nhà nghiên cứu: Vai trò: 1 = Chủ tịch, 2 = Ủy viên: [Lỗi] Hội đồng đã có Chủ tịch.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+23. UC06 Chủ tịch hội đồng khác không được ghi điểm | exit=0 | JSON thay đổi=False
+stdin=["2", "3", "R001", "15", "HD03", "8.5", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (mã Chủ tịch): Đã chuyển sang vai trò Chủ tịch hội đồng [R001].
+
+Vai trò hiện tại: Chủ tịch hội đồng [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Điểm nghiệm thu (0-10): [Lỗi] Chỉ Chủ tịch của hội đồng này mới được ghi điểm.
+
+Vai trò hiện tại: Chủ tịch hội đồng [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+24. UC06 điểm ngoài [0,10] | exit=0 | JSON thay đổi=False
+stdin=["2", "3", "R002", "15", "HD03", "10.1", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (mã Chủ tịch): Đã chuyển sang vai trò Chủ tịch hội đồng [R002].
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Điểm nghiệm thu (0-10): [Lỗi] Điểm nghiệm thu phải nằm trong khoảng 0 đến 10. (Parameter 'score')
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+25. UC06 chưa thể hoàn thành khi thiếu điểm; P002 đã có đầu ra trong seed | exit=0 | JSON thay đổi=False
+stdin=["16", "P002", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài cần hoàn thành: [Lỗi] Cần điểm nghiệm thu và ít nhất một đầu ra để hoàn thành đề tài.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+26. UC06 điểm vượt phạm vi decimal | exit=0 | JSON thay đổi=False
+stdin=["2", "3", "R002", "15", "HD03", "79228162514264337593543950336", "1", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (mã Chủ tịch): Đã chuyển sang vai trò Chủ tịch hội đồng [R002].
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Điểm nghiệm thu (0-10): [Lỗi] Hãy nhập điểm từ 0 đến 10, ví dụ 8,5.
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+Mã     Tên đề tài                                 Trạng thái SL thành viên
+──────────────────────────────────────────────────────────────────────────
+P001   Ứng dụng học máy trong phân loại văn bản … Active     2
+P002   Nghiên cứu tối ưu thuật toán tìm kiếm trê… Active     3
+P003   Nghien cuu phan loai van ban               Active     2
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+27. UC05 khóa thành viên ngay cả khi lần ghi đầu cho điểm 0 | exit=0 | JSON thay đổi=True
+stdin=["2", "3", "R002", "15", "HD03", "0", "2", "1", "14", "HD03", "R004", "2", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (mã Chủ tịch): Đã chuyển sang vai trò Chủ tịch hội đồng [R002].
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Điểm nghiệm thu (0-10): Đã ghi điểm nghiệm thu.
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Đã chuyển sang vai trò Chuyên viên.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Mã nhà nghiên cứu: Vai trò: 1 = Chủ tịch, 2 = Ủy viên: [Lỗi] Danh sách hội đồng đã khóa sau khi ghi điểm nghiệm thu.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+28. UC06 đúng Chủ tịch, chấp nhận dấu phẩy thập phân | exit=0 | JSON thay đổi=True
+stdin=["2", "3", "R002", "15", "HD03", "8,5", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (mã Chủ tịch): Đã chuyển sang vai trò Chủ tịch hội đồng [R002].
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Điểm nghiệm thu (0-10): Đã ghi điểm nghiệm thu.
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+29. UC06 chưa thể hoàn thành khi có điểm nhưng chưa có đầu ra | exit=0 | JSON thay đổi=False
+stdin=["16", "P003", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài cần hoàn thành: [Lỗi] Cần điểm nghiệm thu và ít nhất một đầu ra để hoàn thành đề tài.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+30. UC07 số lượng vượt int | exit=0 | JSON thay đổi=False
+stdin=["2", "2", "R001", "18", "SP03", "Bao cao thu nghiem", "P003", "DT02", "2147483648", "1", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (R001/R002/R003/R004): Đã chuyển sang vai trò Nhà nghiên cứu [R001].
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã sản phẩm: Tên sản phẩm: Mã đề tài: Mã loại (DT01 = Phần mềm, DT02 = Báo cáo kỹ thuật): Số lượng: [Lỗi] Hãy nhập số nguyên từ -2147483648 đến 2147483647.
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+Mã     Tên đề tài                                 Trạng thái SL thành viên
+──────────────────────────────────────────────────────────────────────────
+P001   Ứng dụng học máy trong phân loại văn bản … Active     2
+P002   Nghiên cứu tối ưu thuật toán tìm kiếm trê… Active     3
+P003   Nghien cuu phan loai van ban               Active     2
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+31. UC07 sai vai trò | exit=0 | JSON thay đổi=False
+stdin=["18", "SP03", "Bao cao thu nghiem", "P003", "DT02", "2", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã sản phẩm: Tên sản phẩm: Mã đề tài: Mã loại (DT01 = Phần mềm, DT02 = Báo cáo kỹ thuật): Số lượng: [Lỗi] Vai trò hiện tại không được thực hiện thao tác này.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+32. UC07 tạo bài báo và sản phẩm | exit=0 | JSON thay đổi=True
+stdin=["2", "2", "R001", "17", "PA03", "Bài báo phân loại văn bản", "P003", "10.1000/nckh.2026.003", "Tạp chí Khoa học", "2026", "2", "R001", "1", "y", "R005", "2", "sai", " N ", "18", "SP03", "Bao cao thu nghiem", "P003", "DT02", "2", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (R001/R002/R003/R004): Đã chuyển sang vai trò Nhà nghiên cứu [R001].
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã bài báo: Tên bài báo: Mã đề tài liên kết: DOI (Enter để bỏ qua): Nhà xuất bản/tạp chí: Năm xuất bản: Số tác giả:   Tác giả 1 - mã nhà nghiên cứu:   Tác giả 1 - thứ tự:   Tác giả 1 - là tác giả liên hệ? (y/n):   Tác giả 2 - mã nhà nghiên cứu:   Tác giả 2 - thứ tự:   Tác giả 2 - là tác giả liên hệ? (y/n): [Lỗi] Hãy nhập y hoặc n.
+  Tác giả 2 - là tác giả liên hệ? (y/n): Đã ghi Bài báo [PA03] Bài báo phân loại văn bản (Tạp chí Khoa học, 2026), 2 tác giả, DOI 10.1000/nckh.2026.003.
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã sản phẩm: Tên sản phẩm: Mã đề tài: Mã loại (DT01 = Phần mềm, DT02 = Báo cáo kỹ thuật): Số lượng: Đã ghi Sản phẩm [SP03] Bao cao thu nghiem (loại DT02, số lượng 2).
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+33. UC06 hoàn thành sau khi có bằng chứng thật | exit=0 | JSON thay đổi=True
+stdin=["16", "P003", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài cần hoàn thành: Đề tài [P003] đã hoàn thành.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+34. UC04 khóa kinh phí sau nghiệm thu | exit=0 | JSON thay đổi=False
+stdin=["9", "A006", "P003", "F01", "1", "2026-11-26", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đợt phân bổ: Mã đề tài: Mã nguồn kinh phí (F01/F02): Số tiền VND (nhập số nguyên, ví dụ 1000000): Ngày phân bổ (yyyy-MM-dd): [Lỗi] Không thể phân bổ thêm kinh phí cho đề tài đã hoàn thành.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+35. UC06 không sửa điểm khi đã hoàn thành | exit=0 | JSON thay đổi=False
+stdin=["2", "3", "R002", "15", "HD03", "9", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (mã Chủ tịch): Đã chuyển sang vai trò Chủ tịch hội đồng [R002].
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã hội đồng: Điểm nghiệm thu (0-10): [Lỗi] Chỉ ghi điểm cho đề tài đang thực hiện.
+
+Vai trò hiện tại: Chủ tịch hội đồng [R002]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+36. UC06 không hoàn thành hai lần | exit=0 | JSON thay đổi=False
+stdin=["16", "P003", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài cần hoàn thành: [Lỗi] Đề tài đã hoàn thành.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+37. UC07 không ghi thêm đầu ra khi đã hoàn thành | exit=0 | JSON thay đổi=False
+stdin=["2", "2", "R001", "18", "SP04", "Bao cao thu nghiem", "P003", "DT02", "2", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (R001/R002/R003/R004): Đã chuyển sang vai trò Nhà nghiên cứu [R001].
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã sản phẩm: Tên sản phẩm: Mã đề tài: Mã loại (DT01 = Phần mềm, DT02 = Báo cáo kỹ thuật): Số lượng: [Lỗi] Chỉ ghi nhận đầu ra cho đề tài đang thực hiện.
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+38. UC08 sai vai trò xem báo cáo và tra cứu | exit=0 | JSON thay đổi=False
+stdin=["2", "2", "R001", "19", "21", "P003", "Completed", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn:   1 = Chuyên viên (Officer)
+  2 = Nhà nghiên cứu (Researcher)
+  3 = Chủ tịch hội đồng (CouncilChair)
+Chọn vai trò: Nhập mã nhà nghiên cứu (R001/R002/R003/R004): Đã chuyển sang vai trò Nhà nghiên cứu [R001].
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: [Lỗi] Chỉ Chuyên viên mới được xem báo cáo.
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài (Enter = tất cả): Trạng thái Pending/Active/Completed (Enter = tất cả): [Lỗi] Vai trò hiện tại không được thực hiện thao tác này.
+
+Vai trò hiện tại: Nhà nghiên cứu [R001]
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+
+39. UC08 mở lại, tra cứu trạng thái và bốn báo cáo | exit=0 | JSON thay đổi=False
+stdin=["21", " p003 ", "Completed", "21", "P003", "Active", "11", "12", "19", "20", "0"]
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài (Enter = tất cả): Trạng thái Pending/Active/Completed (Enter = tất cả): 
+[P003] Nghien cuu phan loai van ban | Completed | kinh phí 250,000,000 đ | điểm hội đồng: 8.5
+    - Bài báo [PA03] Bài báo phân loại văn bản (Tạp chí Khoa học, 2026), 2 tác giả, DOI 10.1000/nckh.2026.003
+    - Sản phẩm [SP03] Bao cao thu nghiem (loại DT02, số lượng 2)
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài (Enter = tất cả): Trạng thái Pending/Active/Completed (Enter = tất cả): Không có đề tài phù hợp.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+══ TỔNG KINH PHÍ THEO ĐỀ TÀI ══
+  Mã       Tên                                                  Tổng Ghi chú
+  ────────────────────────────────────────────────────────────────────────
+  P001     Ứng dụng học máy trong phân loại văn …    130,000,000 đ  
+  P002     Nghiên cứu tối ưu thuật toán tìm kiếm…    120,000,000 đ  
+  P003     Nghien cuu phan loai van ban              250,000,000 đ  
+  ────────────────────────────────────────────────────────────────────────
+  TỔNG CỘNG                                          500,000,000 đ
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+══ TỔNG KINH PHÍ THEO NGUỒN ══
+  Mã       Tên                                                  Tổng Ghi chú
+  ────────────────────────────────────────────────────────────────────────
+  F01      Quỹ Nghiên cứu Khoa học Trường            180,000,000 đ  2 đợt cấp
+  F02      Quỹ Phát triển KH&CN Quốc gia (NAFOST…    170,000,000 đ  2 đợt cấp
+  F03      Quy ho tro nghien cuu                     150,000,000 đ  1 đợt cấp
+  ────────────────────────────────────────────────────────────────────────
+  TỔNG CỘNG                                          500,000,000 đ
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+══ KẾT QUẢ ĐẦU RA THEO ĐỀ TÀI ══
+  Mã       Tên                                                  Tổng Ghi chú
+  ────────────────────────────────────────────────────────────────────────
+  P001     Ứng dụng học máy trong phân loại văn …              0 đầu ra  chưa có đầu ra
+  P002     Nghiên cứu tối ưu thuật toán tìm kiếm…              2 đầu ra  1 bài báo, 1 sản phẩm: Tối ưu hóa tìm kiếm A* trên đồ thị đường bộ cỡ lớn; Thư viện tìm kiếm đồ thị GraphFind
+  P003     Nghien cuu phan loai van ban                        2 đầu ra  1 bài báo, 1 sản phẩm: Bài báo phân loại văn bản; Bao cao thu nghiem
+  ────────────────────────────────────────────────────────────────────────
+  TỔNG CỘNG                                                    4 đầu ra
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+══ KẾT QUẢ ĐẦU RA THEO LOẠI ══
+  Mã       Tên                                                  Tổng Ghi chú
+  ────────────────────────────────────────────────────────────────────────
+  PAPER    Bài báo khoa học                                    2 bài  
+  DT01     Phần mềm                                            1 sản phẩm  1 lần ghi nhận
+  DT02     Báo cáo kỹ thuật                                    2 sản phẩm  1 lần ghi nhận
+  ────────────────────────────────────────────────────────────────────────
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 

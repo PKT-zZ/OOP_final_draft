@@ -1,0 +1,38 @@
+---
+config:
+  layout: elk
+---
+classDiagram
+    direction TB
+
+    %% 28fb531: Business/Services/ResearchOutputCreators.cs:13–49 và Business/Models/outputs.cs.
+    %% Build gọi Create rồi Validate. Hai Creator cụ thể ghi đè đúng cùng chữ ký Create.
+    class ResearchOutputCreator {
+        <<abstract>>
+        +Build(draft : OutputDraft) ResearchOutput
+        #Create(draft : OutputDraft)* ResearchOutput
+    }
+    class PaperCreator {
+        #Create(draft : OutputDraft) ResearchOutput
+    }
+    class DeliverableCreator {
+        #Create(draft : OutputDraft) ResearchOutput
+    }
+
+    class ResearchOutput {
+        <<abstract>>
+        +Validate()* void
+    }
+    class Paper {
+        +Validate() void
+    }
+    class ProjectDeliverable {
+        +Validate() void
+    }
+
+    ResearchOutputCreator <|-- PaperCreator
+    ResearchOutputCreator <|-- DeliverableCreator
+    ResearchOutput <|-- Paper
+    ResearchOutput <|-- ProjectDeliverable
+    PaperCreator ..> Paper : Khởi tạo
+    DeliverableCreator ..> ProjectDeliverable : Khởi tạo

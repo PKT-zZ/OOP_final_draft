@@ -1,0 +1,206 @@
+╔══════════════════════════════════════════════════════╗
+║        HỆ THỐNG QUẢN LÝ NGHIÊN CỨU KHOA HỌC          ║
+╚══════════════════════════════════════════════════════╝
+Dữ liệu được lưu vào data/nckh.json sau mỗi thao tác thành công.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài (Enter = tất cả): Trạng thái Pending/Active/Completed (Enter = tất cả): 
+[P003] Nghien cuu phan loai van ban | Completed | kinh phí 250,000,000 đ | điểm hội đồng: 8.5
+    - Bài báo [PA03] Bài báo phân loại văn bản (Tạp chí Khoa học, 2026), 2 tác giả, DOI 10.1000/nckh.2026.003
+    - Sản phẩm [SP03] Bao cao thu nghiem (loại DT02, số lượng 2)
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: Mã đề tài (Enter = tất cả): Trạng thái Pending/Active/Completed (Enter = tất cả): Không có đề tài phù hợp.
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+══ TỔNG KINH PHÍ THEO ĐỀ TÀI ══
+  Mã       Tên                                                  Tổng Ghi chú
+  ────────────────────────────────────────────────────────────────────────
+  P001     Ứng dụng học máy trong phân loại văn …    130,000,000 đ  
+  P002     Nghiên cứu tối ưu thuật toán tìm kiếm…    120,000,000 đ  
+  P003     Nghien cuu phan loai van ban              250,000,000 đ  
+  ────────────────────────────────────────────────────────────────────────
+  TỔNG CỘNG                                          500,000,000 đ
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+══ TỔNG KINH PHÍ THEO NGUỒN ══
+  Mã       Tên                                                  Tổng Ghi chú
+  ────────────────────────────────────────────────────────────────────────
+  F01      Quỹ Nghiên cứu Khoa học Trường            180,000,000 đ  2 đợt cấp
+  F02      Quỹ Phát triển KH&CN Quốc gia (NAFOST…    170,000,000 đ  2 đợt cấp
+  F03      Quy ho tro nghien cuu                     150,000,000 đ  1 đợt cấp
+  ────────────────────────────────────────────────────────────────────────
+  TỔNG CỘNG                                          500,000,000 đ
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+══ KẾT QUẢ ĐẦU RA THEO ĐỀ TÀI ══
+  Mã       Tên                                                  Tổng Ghi chú
+  ────────────────────────────────────────────────────────────────────────
+  P001     Ứng dụng học máy trong phân loại văn …              0 đầu ra  chưa có đầu ra
+  P002     Nghiên cứu tối ưu thuật toán tìm kiếm…              2 đầu ra  1 bài báo, 1 sản phẩm: Tối ưu hóa tìm kiếm A* trên đồ thị đường bộ cỡ lớn; Thư viện tìm kiếm đồ thị GraphFind
+  P003     Nghien cuu phan loai van ban                        2 đầu ra  1 bài báo, 1 sản phẩm: Bài báo phân loại văn bản; Bao cao thu nghiem
+  ────────────────────────────────────────────────────────────────────────
+  TỔNG CỘNG                                                    4 đầu ra
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 
+══ KẾT QUẢ ĐẦU RA THEO LOẠI ══
+  Mã       Tên                                                  Tổng Ghi chú
+  ────────────────────────────────────────────────────────────────────────
+  PAPER    Bài báo khoa học                                    2 bài  
+  DT01     Phần mềm                                            1 sản phẩm  1 lần ghi nhận
+  DT02     Báo cáo kỹ thuật                                    2 sản phẩm  1 lần ghi nhận
+  ────────────────────────────────────────────────────────────────────────
+
+Vai trò hiện tại: Chuyên viên
+─────────────────────────────────────────────────────
+  [Nhân sự & Đơn vị]
+   1  Xem danh sách đề tài         2  Đổi vai trò
+   3  Lưu/cập nhật đơn vị          4  Lưu/cập nhật nhà nghiên cứu
+  10  Xem lịch sử lãnh đạo đơn vị
+  [Đề tài & Phê duyệt]
+   5  Đề xuất đề tài mới           6  Gán thành viên/chủ nhiệm
+   7  Phê duyệt đề tài
+  [Kinh phí]
+   8  Thêm nguồn kinh phí          9  Phân bổ kinh phí
+  [Nghiệm thu & Đầu ra]
+  13  Lập hội đồng nghiệm thu     14  Gán thành viên hội đồng
+  15  Ghi điểm nghiệm thu         16  Hoàn thành đề tài
+  17  Ghi bài báo                 18  Ghi sản phẩm bàn giao
+  [Báo cáo & Tra cứu]
+  11  Báo cáo kinh phí theo đề tài
+  12  Báo cáo kinh phí theo nguồn tài trợ
+  19  Báo cáo đầu ra theo đề tài  20  Báo cáo đầu ra theo loại
+  21  Tra cứu đề tài (mã/trạng thái)
+─────────────────────────────────────────────────────
+   0  Thoát
+Chọn: 

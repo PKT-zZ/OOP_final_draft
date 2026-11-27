@@ -1,0 +1,38 @@
+---
+config:
+  sequence:
+    actorMargin: 10
+    width: 54
+    messageMargin: 5
+    noteMargin: 8
+---
+sequenceDiagram
+    %% UC03 - Phê duyệt đề tài (mục 7)
+    %% Dựa trên docs/uml.md §5.1 tại 28fb531. Hình thể hiện luồng hợp lệ.
+    %% ConsoleMenu.cs:185-190, ProjectService.cs:34-40.
+    %% Nhãn ở lời gọi tự thân và lời gọi qua Kho đề tài được dời trong mermaid-print.css.
+    %% projects.cs:79-86,135-141, ProjectStates.cs:9-19.
+    actor CV as Chuyên viên
+    %% Menu = ConsoleMenu, dịch vụ = ProjectService, đề tài = ResearchProject.
+    participant UI as Menu
+    participant S as Dịch vụ đề tài
+    participant K as Kho đề tài
+    participant P as Đề tài
+
+    CV->>UI: Mục 7
+    UI->>S: Approve(...)
+    Note over S: Quyền Officer
+    S->>K: FindProject(projectId)
+    S->>+P: Approve("OFFICER", at)
+    P->>+P: StateFor(Status)
+    create participant T as PendingState
+    P--)T: «create»
+    deactivate P
+    P->>T: Approve(...)
+    Note over T: Pending, đúng một chủ nhiệm
+    T->>P: ChangeStatus(Active)
+    Note over P: Ghi lịch sử và đổi trạng thái
+    deactivate P
+    S->>K: Save(project)
+    S-->>UI: Hoàn tất
+    UI-->>CV: Đã duyệt

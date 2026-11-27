@@ -1,0 +1,34 @@
+---
+config:
+  sequence:
+    actorMargin: 8
+    width: 54
+    messageMargin: 8
+    noteMargin: 8
+---
+sequenceDiagram
+    accTitle: UC06a · Ghi điểm nghiệm thu
+    %% UC06a - Chủ tịch ghi điểm nghiệm thu (mục 15)
+    %% Dựa trên docs/uml.md §5.3 tại 28fb531.
+    %% ConsoleMenu.cs:249-253, EvaluationService.cs:38-50, evaluation.cs:42-64.
+    %% K nhóm hai giao diện IProjectRepository và IResultRepository.
+    %% Menu = ConsoleMenu, dịch vụ = EvaluationService, hội đồng = EvaluationCouncil.
+    actor CT as Chủ tịch
+    participant UI as Menu
+    participant S as Dịch vụ<br/>hội đồng
+    participant K as Kho<br/>dữ liệu
+    participant H as Hội đồng
+
+    CT->>UI: Mục 15
+    UI->>S: RecordScore(...)
+    Note over S: Quyền CouncilChair
+    S->>K: FindCouncil(councilId)
+    S->>K: FindProject(council.ProjectId)
+    Note over S: Đề tài phải Active
+    %% id là user.ResearcherId của phiên đang thao tác.
+    S->>H: RecordScore(id, score)
+    Note over H: Đúng ChairmanId, điểm 0–10.<br/>Gán Score và khóa phân công.
+    S->>K: Save(council)
+    S-->>UI: Hoàn tất
+    UI-->>CT: Đã ghi điểm nghiệm thu
+    Note over S,H: Có thể ghi lại điểm khi đề tài còn Active, kể cả điểm 0.

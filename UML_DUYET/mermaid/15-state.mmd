@@ -1,0 +1,26 @@
+classDiagram
+    direction TB
+
+    %% 28fb531: Business/Models/projects.cs:79–86, 135–142 và ProjectStates.cs.
+    %% StateFor là phương thức tĩnh riêng, tạo State rồi ủy quyền.
+    %% Dấu ~ biểu diễn internal. Các lớp State thực thi cả hai phương thức của giao diện.
+    class ResearchProject {
+        +Status : ProjectStatus
+        +Approve(actorId : string, at : DateTimeOffset) void
+        +Complete(actorId : string, at : DateTimeOffset) void
+        ~ChangeStatus(next : ProjectStatus, actorId : string, at : DateTimeOffset) void
+        -StateFor(status : ProjectStatus)$ IProjectState
+    }
+    class IProjectState {
+        <<interface>>
+        +Approve(project : ResearchProject, actorId : string, at : DateTimeOffset)* void
+        +Complete(project : ResearchProject, actorId : string, at : DateTimeOffset)* void
+    }
+    class PendingState
+    class ActiveState
+    class CompletedState
+
+    ResearchProject ..> IProjectState : Ủy quyền theo trạng thái
+    IProjectState <|.. PendingState
+    IProjectState <|.. ActiveState
+    IProjectState <|.. CompletedState

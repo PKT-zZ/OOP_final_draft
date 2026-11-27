@@ -1,0 +1,12 @@
+stateDiagram-v2
+    direction TB
+    %% Projects.cs:50,79–86,115–141; ProjectStates.cs:9–44; ProjectService.cs:34–50.
+    %% Hai chuyển tiếp nghiệp vụ do ProjectService kiểm quyền Officer.
+    %% Completed vẫn tồn tại trong kho và có thể được tra cứu.
+    state "Pending · Chờ duyệt" as Pending
+    state "Active · Đang thực hiện" as Active
+    state "Completed · Đã hoàn thành" as Completed
+
+    [*] --> Pending
+    Pending --> Active: Approve [đúng một Chủ nhiệm] / ghi lịch sử
+    Active --> Completed: Complete [có điểm và ít nhất 1 đầu ra] / ghi lịch sử

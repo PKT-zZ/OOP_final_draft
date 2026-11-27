@@ -1,0 +1,90 @@
+---
+config:
+  layout: elk
+  elk:
+    lineHops: gap
+  themeCSS: |
+    .edgeTerminals.edgeTerminals { font-size: 18px !important; }
+  class:
+    nodeSpacing: 15
+    rankSpacing: 25
+---
+classDiagram
+    direction LR
+    accTitle: Lớp nhân sự, đề tài và kinh phí
+    accDescr: Liên kết đơn vị và nhà nghiên cứu dùng DepartmentId. Vòng đời hợp lệ của đề tài tạo tối đa hai mục lịch sử. Khoản phân bổ gắn đề tài và nguồn kinh phí qua mã.
+
+    %% Kế thừa từ docs/uml.md §2. Đối chiếu people.cs, projects.cs và funding.cs.
+    %% Thuộc tính và phương thức được chọn theo khái niệm thể hiện trong hình.
+    class Department {
+        +Id : string
+        +Name : string
+        +CreatedAt : DateOnly
+        +Rename(name: string) void
+    }
+    class Researcher {
+        +Id : string
+        +DepartmentId : string
+        +FullName : string
+        +Email : string
+        +Update(...) void
+    }
+    class DepartmentHeadTerm {
+        +Id : string
+        +DepartmentId : string
+        +ResearcherId : string
+        +From : DateOnly
+        +To : DateOnly [0..1]
+    }
+    class ProjectCategory {
+        +Id : string
+        +Name : string
+    }
+    class ResearchProject {
+        +Id : string
+        +CategoryId : string
+        +Title : string
+        +StartDate : DateOnly
+        +EndDate : DateOnly [0..1]
+        +Status : ProjectStatus
+        +/TotalFunding : decimal
+        +AddMember(...) void
+        +AddAllocation(...) void
+        +Approve(...) void
+        +Complete(...) void
+    }
+    class ProjectParticipation {
+        +ProjectId : string
+        +ResearcherId : string
+        +Role : ProjectRole
+    }
+    class ProjectStatusHistory {
+        <<record>>
+        +ProjectId : string
+        +FromStatus : ProjectStatus
+        +ToStatus : ProjectStatus
+        +ChangedAt : DateTimeOffset
+        +ActorId : string
+    }
+    class FundingSource {
+        +Id : string
+        +Name : string
+        +Type : string
+    }
+    class FundingAllocation {
+        +Id : string
+        +ProjectId : string
+        +SourceId : string
+        +Amount : decimal
+        +AllocatedAt : DateOnly
+    }
+
+    Department "1" -- "0..*" Researcher
+    Department "1" -- "0..*" DepartmentHeadTerm
+    Researcher "1" -- "0..*" DepartmentHeadTerm
+    ProjectCategory "1" -- "0..*" ResearchProject
+    ResearchProject "1" *-- "0..*" ProjectParticipation
+    Researcher "1" -- "0..*" ProjectParticipation
+    ResearchProject "1" *-- "0..2" ProjectStatusHistory
+    FundingAllocation "0..*" -- "1" ResearchProject
+    FundingSource "1" -- "0..*" FundingAllocation

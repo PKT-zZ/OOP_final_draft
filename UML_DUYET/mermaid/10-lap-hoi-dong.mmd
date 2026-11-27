@@ -1,0 +1,44 @@
+---
+config:
+  sequence:
+    actorMargin: 8
+    width: 52
+    messageMargin: 8
+    noteMargin: 7
+---
+sequenceDiagram
+    %% Nhãn hai nhánh được đặt giữa các đường sống qua mermaid-print.css.
+    %% UC05 - Lập và phân công hội đồng (mục 13 và 14)
+    %% Dựa trên docs/uml.md §5.3 tại 28fb531. Hai thao tác menu được gọi riêng.
+    %% ConsoleMenu.cs:229-247, EvaluationService.cs:10-36, evaluation.cs:36-54.
+    %% K nhóm các giao diện IPeopleRepository, IProjectRepository và IResultRepository.
+    actor CV as Chuyên viên
+    %% Menu = ConsoleMenu, dịch vụ = EvaluationService.
+    participant UI as Menu
+    participant S as Dịch vụ<br/>hội đồng
+    participant K as Kho<br/>dữ liệu
+    participant H as Hội đồng<br/>đã có
+
+    CV->>UI: Chọn mục 13 hoặc 14
+    alt Mục 13 · Lập hội đồng
+        UI->>S: CreateCouncil(...)
+        Note over S: Quyền Officer
+        S->>K: FindProject(...)
+        Note over S: Đề tài Active
+        S->>K: FindCouncil(...)
+        S->>K: FindCouncilByProject(...)
+        Note over S: Mã chuẩn hóa chưa có,<br/>đề tài chưa có hội đồng.<br/>Tạo EvaluationCouncil.
+        S->>K: Save(council)
+        S-->>UI: council
+        UI-->>CV: Đã lập hội đồng
+    else Mục 14 · Phân công
+        UI->>S: AssignMember(...)
+        Note over S: Quyền Officer
+        S->>K: FindResearcher(...)
+        S->>K: FindCouncil(...)
+        S->>H: AddMember(...)
+        Note over H: Chưa ghi điểm,<br/>không trùng người,<br/>tối đa một Chủ tịch
+        S->>K: Save(council)
+        S-->>UI: Hoàn tất
+        UI-->>CV: Đã phân công
+    end

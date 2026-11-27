@@ -1,0 +1,47 @@
+---
+config:
+  sequence:
+    actorMargin: 8
+    width: 54
+    height: 68
+    messageMargin: 5
+    noteMargin: 7
+    wrapPadding: 4
+---
+sequenceDiagram
+    %% UC07 - Ghi bài báo kèm liên kết đề tài (mục 17)
+    %% Dựa trên docs/uml.md §5.4 tại 28fb531. Hình chỉ minh họa nhánh bài báo.
+    %% ConsoleMenu.cs:263-279, OutputService.cs:9-32,53-63.
+    %% ResearchOutputCreators.cs:15-38, JsonResearchRepository.cs:57-69.
+    %% Mép trái của khung loop và nhãn lời gọi tự thân đặt trong mermaid-print.css.
+    %% K nhóm các giao diện kho. PaperCreator đã được tạo khi khởi tạo OutputService.
+    actor NNC as Nhà nghiên cứu
+    %% Menu = ConsoleMenu, dịch vụ = OutputService.
+    participant UI as Menu
+    participant S as Dịch vụ<br/>đầu ra
+    participant K as Kho<br/>dữ liệu
+    participant F as PaperCreator
+
+    NNC->>UI: Mục 17
+    UI->>S: AddPaper(...)
+    Note over S: Quyền Researcher
+    Note over S: RequireParticipatedActiveProject(...)<br/>Người ghi có hồ sơ và tham gia đề tài Active.
+    Note over S: Người ghi là tác giả.<br/>Mỗi tác giả có hồ sơ.
+    S->>+F: Build(draft)
+    F->>+F: Create(draft)
+    create participant P as Paper
+    F--)P: «create»
+    loop Tác giả
+        F->>P: AddAuthor(...)
+    end
+    F-->>-F: paper
+    F->>P: Validate()
+    F-->>-S: paper
+    S->>K: FindPaper(paper.Id)
+    Note over S: Mã bài báo chưa có.<br/>DOI (nếu có) phải duy nhất.
+    S->>K: SavePaperWithLink(...)
+    Note over K: JSON ghi bài và liên kết,<br/>hoàn tác bản ghi nếu lỗi.
+    S-->>UI: paper
+    UI->>P: GetDisplaySummary()
+    P-->>UI: summary
+    UI-->>NNC: Hiển thị bài báo

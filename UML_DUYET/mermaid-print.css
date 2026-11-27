@@ -1,0 +1,89 @@
+text,
+.nodeLabel,
+.edgeLabel,
+.messageText,
+.noteText,
+.labelText,
+.loopText {
+  color: #000 !important;
+  fill: #000 !important;
+}
+
+.edgeLabel rect,
+.edgeLabel p,
+.labelBkg {
+  background-color: #fff !important;
+  fill: #fff !important;
+  opacity: 1 !important;
+}
+
+.edgeTerminals {
+  font-size: 14px !important;
+}
+
+.actor-line {
+  stroke-width: 1px;
+  stroke-dasharray: 5 4;
+}
+
+.loopLine:not([style*="stroke-dasharray"]) {
+  stroke-dasharray: none;
+}
+
+/* UC03 approval: identify the rendered message and offset its label from the lifeline. */
+.messageText[x="413"][y="246"]:has(+ [data-id="i4"][data-from="S"][data-to="P"]) { translate: -55px 0; }
+.messageText[x="572"][y="290"]:has(+ [data-from="P"][data-to="P"]) { translate: 72px 0; }
+
+/* UC06b completion: place text between the UML lifelines. */
+[data-et="control-structure"][data-id="i10"] .loopText[x="405.5"][y="412"] { translate: -22px 0; }
+[data-et="control-structure"][data-id="i14"] .loopText[x="412"][y="555"] { translate: -32px 0; }
+[data-et="control-structure"][data-id="i27"] .loopText[x="469.75"][y="810"] { translate: -90px 0; }
+[data-et="control-structure"][data-id="i27"] .sectionTitle[x="444.75"][y="1095"] { translate: -65px 0; }
+.messageText[x="317"][y="182"]:has(+ [data-id="i2"]) { translate: 62px 0; }
+.messageText[x="320"]:is([y="584"], [y="984"], [y="1165"]):has(+ [data-from="S"][data-to="UI"]) { translate: 58px 0; }
+.messageText[x="598"][y="676"]:has(+ [data-id="i15"]),
+.messageText[x="601"]:is([y="894"], [y="1119"]):has(+ [data-from="P"][data-to="S"]) { translate: 58px 0; }
+.messageText[x="728"][y="720"]:has(+ [data-from="P"][data-to="P"]) { translate: 69px 0; }
+
+/* UC07 article creation: keep the loop tab to the left of the creator activation. */
+[data-et="control-structure"][data-id="i12"]:has(.loopText[x="735.5"][y="540"]) .loopLine[x1="625.5"][x2="795.5"] {
+  transform-origin: 795.5px 0;
+  transform: scaleX(1.265);
+}
+[data-et="control-structure"][data-id="i12"]:has(.loopText[x="735.5"][y="540"]) :is(.loopLine[x1="625.5"][x2="625.5"], .labelBox, .labelText) { translate: -45px 0; }
+.messageText[x="497"]:has(+ [data-id="i5"][data-from="S"][data-to="F"]) { translate: -40px 0; }
+.messageText[x="646"][y="372"]:has(+ [data-from="F"][data-to="F"]) { translate: 59px 0; }
+.messageText[x="651"][y="623"]:has(+ [data-from="F"][data-to="F"]) { translate: 39px 0; }
+.messageText[x="485"]:has(+ [data-id="i23"][data-from="UI"][data-to="P"]) { translate: -34px 0; }
+
+/* UC05 council: keep both alternative guards clear of the service lifeline. */
+[data-et="control-structure"][data-id="i22"] .loopText[x="435"][y="127"] { translate: 67px 0; }
+[data-et="control-structure"][data-id="i22"] .sectionTitle[x="410"][y="648"] { translate: 92px 0; }
+
+/* UC06a score: place the recording label in the free service-to-repository space. */
+.messageText[y="334"]:has(+ [data-id="i6"][data-from="S"][data-to="H"]) { translate: -103px 0; }
+
+/* UC08 report: keep the creation label and self-message out of the lifelines. */
+.messageText[x="440"][y="114"]:has(+ [data-id="i1"][data-from="M"][data-to="S"]) { translate: -53px 0; }
+.messageText[x="248"][y="186"]:has(+ [data-id="i2"][data-from="M"][data-to="M"]) { translate: 100px 0; }
+
+/* UC02 proposal: align long labels in the service-to-people-repository interval. */
+.messageText[x="632"]:is([y="269"], [y="361"]):has(+ [data-from="S"][data-to="K"]) { translate: -59px 0; }
+.messageText[x="679"][y="453"]:has(+ [data-id="i8"][data-from="S"][data-to="P"]) { translate: -106px 0; }
+
+/* UC03 member assignment: place labels to the left of the people-repository lifeline. */
+.messageText[x="576"][y="250"]:has(+ [data-id="i4"][data-from="S"][data-to="K"]) { translate: -59px 0; }
+.messageText[x="631"][y="294"]:has(+ [data-id="i5"][data-from="S"][data-to="P"]) { translate: -114px 0; }
+
+/* UC04 funding: place labels to the left of the project-repository lifeline. */
+.messageText[x="491"][y="433"]:has(+ [data-id="i8"][data-from="S"][data-to="A"]) { translate: -71px 0; }
+.messageText[x="454"]:is([y="651"], [y="871"]):has(+ [data-from="S"][data-to="P"]) { translate: -34px 0; }
+
+/* The sequence sources reserve the --) marker for creation messages. */
+marker[id$="-filled-head"] > path {
+  d: path("M 9 3 L 15 7 L 9 11");
+  fill: none !important;
+  stroke: #000;
+  stroke-width: 1px;
+  stroke-linejoin: round;
+}

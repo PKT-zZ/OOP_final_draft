@@ -1,0 +1,67 @@
+% !TeX program = xelatex
+\documentclass[12pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{geometry}
+\geometry{a4paper, left=20mm, right=15mm, top=15mm, bottom=15mm}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{pgfornament}
+\usepackage{graphicx}
+\usepackage{setspace}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \coordinate (topleft) at ($(current page.north west) + (20mm,-15mm)$);
+    \coordinate (bottomright) at ($(current page.south east) + (-15mm,15mm)$);
+    \draw [line width=1.5pt] (topleft) rectangle (bottomright);
+    \node[anchor=north west, xshift=2mm, yshift=-2mm] at (topleft) {\pgfornament[width=1cm]{1}};
+    \node[anchor=north east, xshift=-2mm, yshift=-2mm] at (topleft -| bottomright) {\pgfornament[width=1cm,symmetry=v]{1}};
+    \node[anchor=south west, xshift=2mm, yshift=2mm] at (topleft |- bottomright) {\pgfornament[width=1cm,symmetry=h]{1}};
+    \node[anchor=south east, xshift=-2mm, yshift=2mm] at (bottomright) {\pgfornament[width=1cm,symmetry=c]{1}};
+    \node[anchor=south] at ($(current page.south) + (0,17mm)$)
+        {\large\bfseries Hà Nội, Tháng 11/2026};
+\end{tikzpicture}
+
+\begin{center}
+    {\Large\bfseries ĐẠI HỌC BÁCH KHOA HÀ NỘI \\}
+    {\Large\bfseries KHOA TOÁN - TIN \\}
+
+    \vspace{0.2cm}
+    \rule{3cm}{0.4pt}
+    \vspace{0.5cm}
+
+    \includegraphics[width=0.35\textwidth]{fami.png}
+
+    \vspace{0.5cm}
+    {\Large\bfseries BÁO CÁO BÀI TẬP LỚN \\}
+    {\large\bfseries HỌC PHẦN: LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG \\}
+
+    \vspace{0.5cm}
+    {\Large\bfseries ĐỀ TÀI: \\}
+    {\Large\bfseries QUẢN LÝ NGHIÊN CỨU KHOA HỌC \\}
+
+    \vspace{1.25cm}
+    \begin{flushright}
+        \begin{minipage}{0.65\textwidth}
+            \normalsize
+            \textbf{Giảng viên hướng dẫn:} \\
+            T.S. Vũ Thành Nam \\[0.3cm]
+
+            \textbf{Mã lớp:} 174373 \\
+            \textbf{Nhóm:} 10 \\[0.3cm]
+
+            \textbf{Sinh viên thực hiện:} \\[0.2cm]
+            \begin{tabular}{@{}l@{\hspace{0.4cm}}l@{}}
+                Nguyễn Khánh Toàn & -- 202418996 \\
+                Nguyễn Việt Hoàng & -- 202418901 \\
+            \end{tabular}
+        \end{minipage}
+    \end{flushright}
+
+\end{center}
+
+\end{document}

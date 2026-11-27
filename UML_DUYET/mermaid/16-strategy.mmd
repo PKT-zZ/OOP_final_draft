@@ -1,0 +1,31 @@
+classDiagram
+    direction TB
+
+    %% 28fb531: Business/Interfaces/IReportStrategy.cs và Business/Services/ReportService.cs.
+    %% ReportService nhận Strategy qua tham số; ConsoleMenu chọn loại báo cáo.
+    %% Hai Strategy kinh phí thuộc A, hai Strategy đầu ra thuộc B.
+    class ReportService {
+        +Generate(user : CurrentUserContext, strategy : IReportStrategy) IReadOnlyList~ReportRow~
+    }
+    class IReportStrategy {
+        <<interface>>
+        +Title : string
+        +BuildRows()* IReadOnlyList~ReportRow~
+    }
+    %% Chỉ ghi hai trường dùng để đối chiếu giá trị và đơn vị của các cách tổng hợp.
+    class ReportRow {
+        <<record>>
+        +Value : decimal
+        +Unit : string
+    }
+    class FundingByProjectStrategy
+    class FundingBySourceStrategy
+    class OutputByProjectStrategy
+    class OutputByTypeStrategy
+
+    ReportService ..> IReportStrategy : Gọi BuildRows
+    IReportStrategy ..> ReportRow : Trả về
+    IReportStrategy <|.. FundingByProjectStrategy
+    IReportStrategy <|.. FundingBySourceStrategy
+    IReportStrategy <|.. OutputByProjectStrategy
+    IReportStrategy <|.. OutputByTypeStrategy

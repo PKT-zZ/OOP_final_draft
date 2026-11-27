@@ -1,0 +1,9 @@
+\ReportChapter{Kết luận và hướng phát triển}\label{sec:conclusion}
+\subsection{Kết quả đạt được}
+Ứng dụng thực hiện quy trình quản lý đề tài từ lúc lập đề xuất đến khi nghiệm thu. Qua kịch bản P003 ở mục~\ref{sec:demo-a}, nhóm kiểm tra được việc chuyển trạng thái và đọc lại hồ sơ do cả hai phân hệ cập nhật.
+
+\subsection{Bài học từ thiết kế hướng đối tượng}
+Việc phân chia trách nhiệm bắt đầu từ dữ liệu mà mỗi lớp quản lý. Đề tài điều phối hành vi theo trạng thái và lưu lịch sử của mình. Dịch vụ đề tài kiểm tra các điều kiện nghiệm thu qua giao diện dùng chung với phân hệ kết quả. Nhóm có thể kiểm thử riêng bước chuyển trạng thái bằng dữ liệu mô phỏng, rồi dùng kịch bản tích hợp để đối chiếu điểm và đầu ra trên một hồ sơ đã lưu.
+
+\subsection{Giới hạn}
+Ứng dụng dùng vai trò mô phỏng và tệp JSON cục bộ, với giả định chỉ có một phiên ghi tại mỗi thời điểm. Chẳng hạn, khi hai bản chương trình cùng mở một tệp, mỗi bản có một tập đối tượng riêng trong bộ nhớ. Lần lưu sau có thể ghi đè thay đổi vừa được bản kia lưu. Nếu triển khai cho nhiều người dùng, nhóm cần xác thực người thao tác và chọn cơ chế kiểm soát cập nhật đồng thời ở tầng lưu trữ. Các quy tắc về đề tài, hội đồng và đầu ra vẫn cần được kiểm tra ở tầng nghiệp vụ.

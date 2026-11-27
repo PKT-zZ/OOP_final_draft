@@ -1,0 +1,55 @@
+---
+config:
+  sequence:
+    diagramMarginX: 8
+    actorMargin: 6
+    width: 50
+    messageMargin: 4
+    noteMargin: 5
+    wrapPadding: 3
+---
+sequenceDiagram
+    accTitle: UC06b · Xác nhận hoàn thành
+    %% UC06b - Xác nhận hoàn thành (mục 16)
+    %% Dựa trên docs/uml.md §5.3 tại 28fb531.
+    %% ConsoleMenu.cs:255-260, ProjectService.cs:42-53, ResultQueries.cs:23-27.
+    %% projects.cs:79-86,135-141, ProjectStates.cs:23-45.
+    %% Menu = ConsoleMenu, dịch vụ = ProjectService, đề tài = ResearchProject.
+    %% Kho = IProjectRepository, bằng chứng = ResultCompletionEvidence.
+    %% Hình này tóm tắt phần ủy quyền State trong Complete để tập trung vào kiểm tra và báo lỗi.
+    actor CV as Chuyên viên
+    participant UI as Menu
+    CV->>UI: Mục 16
+    create participant E as Bằng chứng
+    UI--)E: «create»
+    participant S as Dịch vụ<br/>đề tài
+    participant K as Kho<br/>đề tài
+    participant P as Đề tài
+
+    UI->>S: Complete(...)
+    Note over S: Quyền Officer
+    S->>K: FindProject(...)
+    S->>E: HasScoredCouncil(...)
+    E-->>S: scored (bool)
+    opt scored = true
+        S->>E: HasResearchOutput(...)
+        E-->>S: hasOutput (bool)
+    end
+    %% Toán tử || chỉ xét hasOutput khi scored là true, như trong Complete.
+    break !scored || !hasOutput
+        S-->>UI: Ngoại lệ
+        Note over CV,P: Menu hiển thị lỗi. Đề tài giữ nguyên.
+    end
+    S->>P: Complete(...)
+    P->>P: StateFor(Status)
+    alt Status = Active
+        Note over P: ActiveState gọi ChangeStatus.<br/>Ghi lịch sử, chuyển Completed.
+        P-->>S: Hoàn tất
+        S->>K: Save(project)
+        S-->>UI: Hoàn tất
+        UI-->>CV: Đã hoàn thành
+    else Status ≠ Active
+        P-->>S: State từ chối
+        S-->>UI: Ngoại lệ
+        UI-->>CV: Báo lỗi
+    end

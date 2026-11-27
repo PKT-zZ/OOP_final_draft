@@ -1,0 +1,506 @@
+\input{report/uml-trim}
+\ReportChapter{Phân tích yêu cầu}\label{sec:requirements}
+\subsection{Tác nhân và quyền thao tác}\label{sec:actors}
+
+Chuyên viên QLNCKH quản lý hồ sơ đơn vị và nhà nghiên cứu, phân công người tham gia, phê duyệt đề tài và ghi nhận các đợt phân bổ kinh phí. Khi đề tài đi vào thực hiện, chuyên viên thành lập hội đồng nghiệm thu, theo dõi kết quả và xác nhận hoàn thành. Các báo cáo tổng hợp và chức năng tra cứu chi tiết dành cho vai trò này.
+
+Nhà nghiên cứu có hồ sơ trong hệ thống được gửi đề xuất. Sau khi tham gia một đề tài đang thực hiện, nhà nghiên cứu có thể ghi nhận kết quả cho đề tài đó. Chủ tịch hội đồng ghi điểm nghiệm thu cho hội đồng mình phụ trách. Một nhà nghiên cứu có thể là chủ nhiệm ở đề tài này và là thành viên ở đề tài khác. Chức danh chủ nhiệm đề tài và chức danh chủ tịch hội đồng cũng có phạm vi riêng. Chẳng hạn, việc được phân công làm chủ nhiệm chưa cấp quyền duyệt đề tài.
+
+Chương trình mô phỏng việc chọn vai trò tại mục 2 của menu. Với vai trò nhà nghiên cứu hoặc chủ tịch hội đồng, người thao tác nhập thêm mã nhà nghiên cứu. Mục 1 dùng chung cho cả ba vai trò và chỉ hiển thị mã, tên, trạng thái cùng số thành viên của đề tài. Đây là thao tác xem nhanh trên menu. Tra cứu có bộ lọc và dữ liệu chi tiết thuộc UC08, dành cho chuyên viên.
+
+Hình~\ref{fig:use-cases} tập trung vào tám nhóm nghiệp vụ chính, với UC06a và UC06b được vẽ riêng theo quyền của hai tác nhân. Đổi vai trò và xem nhanh danh sách là các mục dùng chung của giao diện.
+\ReportUml{01-use-case}{fig:use-cases}{Ca sử dụng tổng thể của hệ thống QLNCKH}
+
+\subsection{Ca sử dụng và quy tắc nghiệp vụ}\label{sec:use-cases}
+
+Bảng~\ref{tab:uc} liên hệ từng nhóm với dịch vụ xử lý và ghi rõ phần phối hợp ở UC06b, UC08. Hai dòng UC06a và UC06b thuộc cùng một nhóm.
+
+\begin{table}[!htbp]
+\caption{Ca sử dụng, phân công và phương thức xử lý}\label{tab:uc}
+\small\singlespacing
+\begin{tabularx}{\linewidth}{@{}lL@{}}\toprule
+UC01 — A & \code{PeopleService.SaveDepartment}, \code{SaveResearcher} và \code{GetHeadHistory}. \\
+UC02 — A & \code{ProjectService.ProposeProject}. \\
+UC03 — A & \code{ProjectService.AssignMember} và \code{Approve}. \\
+UC04 — A & \code{FundingService.SaveSource} và \code{Allocate}. \\
+UC05 — B & \code{EvaluationService.CreateCouncil} và \code{AssignMember}. \\
+UC06a — B & Ghi điểm nghiệm thu. \code{EvaluationService.RecordScore}. \\
+UC06b — A, B & Xác nhận hoàn thành. A thực hiện \code{ProjectService.Complete}, B cung cấp \code{ResultCompletionEvidence}. \\
+UC07 — B & \code{OutputService.AddPaper} và \code{AddDeliverable}. \\
+UC08 — A, B & A cài đặt hai cách tổng hợp kinh phí. B phụ trách tổng hợp đầu ra, \code{ReportService.Generate} và \code{ProjectLookupService.Search}. \\
+\bottomrule\end{tabularx}
+\end{table}
+
+\subsubsection{UC01: Quản lý đơn vị và nhân sự}
+
+Khi tạo đơn vị, chuyên viên ghi mã, tên và ngày thành lập. Nếu mã đã có, chương trình chỉ cập nhật tên. Chuyên viên có thể tra cứu các nhiệm kỳ lãnh đạo của một đơn vị theo thứ tự ngày bắt đầu.
+
+Để tạo hoặc cập nhật hồ sơ nhà nghiên cứu, chuyên viên nhập mã, họ tên, email và đơn vị công tác. Hồ sơ phải thuộc một đơn vị đã có trong danh mục. Mỗi địa chỉ email hợp lệ chỉ được dùng cho một hồ sơ.
+
+\subsubsection{UC02: Đề xuất đề tài nghiên cứu}
+
+Nhà nghiên cứu có hồ sơ hợp lệ gửi đề xuất với mã riêng, tên, loại đề tài và ngày dự kiến bắt đầu. Loại đề tài được chọn từ danh mục. Người đề xuất có thể bổ sung ngày kết thúc nếu đã dự kiến được thời điểm này. Ngày kết thúc phải từ ngày bắt đầu trở đi. Đề xuất đủ thông tin được đưa vào danh sách chờ duyệt.
+
+\subsubsection{UC03: Gán thành viên và phê duyệt đề tài}
+
+Trong thời gian chờ duyệt, chuyên viên dùng hồ sơ của các nhà nghiên cứu để lập danh sách tham gia và chỉ định chủ nhiệm đề tài. Mỗi người chỉ xuất hiện một lần trong danh sách và mỗi đề tài có tối đa một chủ nhiệm. Khi đã có đúng một chủ nhiệm, chuyên viên có thể phê duyệt để đề tài chuyển sang trạng thái đang thực hiện. Chương trình ghi lại thời điểm phê duyệt trong lịch sử trạng thái của đề tài.
+
+\subsubsection{UC04: Khai báo nguồn và phân bổ kinh phí}
+
+Chuyên viên khai báo từng nguồn kinh phí bằng một mã riêng, kèm tên và loại nguồn. Một nguồn có thể cấp kinh phí nhiều lần. Mỗi đợt được ghi bằng một mã duy nhất trong toàn hệ thống, cùng mã đề tài, mã nguồn, số tiền và ngày phân bổ. Chuyên viên nhập số đồng nguyên dương cho đề tài đang chờ duyệt hoặc đang thực hiện. Kinh phí của đề tài được tính từ tất cả các đợt đã ghi nhận.
+
+\subsubsection{UC05: Thành lập hội đồng nghiệm thu}
+Một đề tài đang thực hiện được lập tối đa một hội đồng nghiệm thu. Chuyên viên đăng ký mã hội đồng, ngày nghiệm thu và phân công các nhà nghiên cứu làm chủ tịch hoặc ủy viên. Mỗi nhà nghiên cứu chỉ đảm nhận một vị trí trong cùng hội đồng và mỗi hội đồng có tối đa một chủ tịch. Danh sách được chốt khi ghi nhận điểm nghiệm thu lần đầu, kể cả khi điểm là 0.
+
+\subsubsection{UC06: Ghi điểm và xác nhận hoàn thành đề tài}
+\textbf{UC06a – Ghi điểm nghiệm thu.} Chủ tịch được phân công cho hội đồng của đề tài nhập điểm từ 0 đến 10 khi đề tài đang thực hiện.
+
+\textbf{UC06b – Xác nhận hoàn thành.} Khi hội đồng đã có điểm và đề tài có ít nhất một bài báo liên kết hoặc một sản phẩm bàn giao, chuyên viên có thể xác nhận hoàn thành. Đề tài chuyển sang trạng thái hoàn thành, lưu lịch sử thay đổi và chốt điểm, kinh phí cùng kết quả nghiên cứu đã ghi nhận.
+
+\subsubsection{UC07: Ghi nhận đầu ra nghiên cứu}
+Người ghi nhận kết quả phải tham gia đề tài và đề tài còn đang thực hiện. Với bài báo, người ghi cũng phải là một trong các tác giả. Hồ sơ bài báo gồm mã, tiêu đề, nơi công bố, năm xuất bản (từ 1900 đến 2100), DOI nếu có và danh sách tác giả có hồ sơ trong hệ thống. Danh sách cần có thứ tự bằng số nguyên dương, mỗi tác giả và mỗi số thứ tự chỉ xuất hiện một lần, đồng thời xác định đúng một tác giả liên hệ. Mã bài báo và DOI đã khai báo phải có giá trị duy nhất. Bài báo hợp lệ được lưu cùng thông tin liên kết với đề tài.
+
+Sản phẩm bàn giao được ghi trực tiếp cho một đề tài, có mã riêng, tên, loại trong danh mục và số lượng nguyên dương.
+
+\subsubsection{UC08: Báo cáo tổng hợp và tra cứu}
+Chuyên viên có thể xem kinh phí theo đề tài hoặc theo nguồn. Báo cáo đầu ra theo đề tài đếm số bản ghi bài báo liên kết và sản phẩm bàn giao trên từng hồ sơ. Ghi chú cho biết số bản ghi của từng nhóm và tên các kết quả. Báo cáo theo loại đếm số bài báo trong kho và cộng số lượng sản phẩm của các bản ghi cùng loại.
+
+Tra cứu chi tiết cho phép chuyên viên lọc theo mã đề tài, trạng thái hoặc đồng thời cả hai tiêu chí. Mỗi kết quả gồm mã, tên, trạng thái, tổng kinh phí, điểm nghiệm thu nếu đã có và thông tin hiển thị của từng bài báo hoặc sản phẩm thuộc đề tài.
+
+\subsubsection{Đối chiếu quy tắc và lớp chịu trách nhiệm}
+\begin{ReportTableHere}
+\caption{Mười quy tắc nghiệp vụ và vị trí kiểm tra}\label{tab:rules}
+\small\singlespacing
+\begin{tabularx}{\linewidth}{@{}lL@{}}\toprule
+R1 & \code{ResearchProject} yêu cầu tên đề tài và kiểm tra thứ tự ngày bắt đầu, ngày kết thúc.\\
+R2 & \code{ResearchProject.AddMember} giới hạn một vị trí cho mỗi thành viên và tối đa một chủ nhiệm. \code{PendingState} yêu cầu đúng một chủ nhiệm khi duyệt.\\
+R3 & Các lớp trạng thái giới hạn các bước chuyển của đề tài. \code{ProjectService.Complete} yêu cầu có điểm nghiệm thu.\\
+R4 & \code{FundingService.Allocate} kiểm tra đề tài, nguồn, mã đợt và tổng tiền. \code{FundingAllocation} yêu cầu số tiền dương.\\
+R5 & \code{PeopleService.SaveResearcher} xác nhận đơn vị tồn tại và email chưa được dùng cho hồ sơ khác.\\
+R6 & \code{EvaluationCouncil.AddMember} kiểm tra thành viên, giới hạn một chủ tịch và dừng bổ sung thành viên sau khi đã chấm điểm.\\
+R7 & \code{EvaluationCouncil.RecordScore} chỉ chấp nhận điểm từ 0 đến 10 do chủ tịch của chính hội đồng nhập.\\
+R8 & \code{EvaluationService.CreateCouncil} giới hạn một hội đồng cho mỗi đề tài đang thực hiện.\\
+R9 & \code{Paper.AddAuthor} và \code{Validate} kiểm tra danh sách tác giả. \code{OutputService.AddPaper} kiểm tra tính duy nhất của DOI đã khai báo.\\
+R10 & \code{ProjectDeliverable.Validate} yêu cầu số lượng dương. \code{ProjectService.Complete} yêu cầu có kết quả nghiên cứu trước khi nghiệm thu.\\
+\bottomrule\end{tabularx}
+\end{ReportTableHere}
+
+\ReportChapter{Thiết kế hướng đối tượng}\label{sec:design}
+\subsection{Kiến trúc và lưu trữ dữ liệu}\label{sec:architecture}
+
+Chương trình được tổ chức thành ba tầng trong cùng một dự án C\#. Hình~\ref{fig:architecture} trình bày các dịch vụ đại diện là \code{ProjectService} và \code{EvaluationService}. Giao diện dòng lệnh tiếp nhận yêu cầu, còn tệp JSON cục bộ lưu hồ sơ giữa các lần chạy.
+\ReportUml{02-kien-truc}{fig:architecture}{Kiến trúc ba tầng và các giao diện kho dữ liệu}
+
+\textbf{Presentation.} \code{ConsoleMenu} tiếp nhận lựa chọn, chuyển dữ liệu nhập sang kiểu phù hợp rồi gọi dịch vụ tương ứng. Kết quả và thông báo lỗi cũng được trình bày tại đây. Khi khởi động, menu khởi tạo một kho JSON dùng chung cho các dịch vụ. Menu có thể đọc dữ liệu để hiển thị danh sách đề tài, còn quyền thao tác và điều kiện cập nhật được kiểm tra ở tầng nghiệp vụ.
+
+\textbf{Business.} Các lớp dịch vụ điều phối ca sử dụng. Các lớp mô hình giữ dữ liệu và xử lý những quy tắc thuộc về từng đối tượng. Chẳng hạn, khi tiếp nhận yêu cầu phê duyệt, \code{ProjectService} xác định người dùng có quyền thao tác và tìm đề tài tương ứng. Việc chấp nhận chuyển trạng thái do mô hình đề tài xử lý. \ReportCodeRef{lst:approve-service} cho thấy dịch vụ chỉ lưu hồ sơ sau khi thao tác phê duyệt thành công.
+
+\begin{ReportCode}[firstnumber=34]{Điều phối thao tác phê duyệt đề tài}{lst:approve-service}
+    public void Approve(CurrentUserContext user, string projectId)
+    {
+        Access.Require(user, UserRole.Officer);
+        var project = RequiredProject(projectId);
+        project.Approve("OFFICER", DateTimeOffset.Now);
+        projects.Save(project);
+    }
+\end{ReportCode}
+
+\ReportCodeSource{\code{Business/Services/ProjectService.cs}, phương thức \code{Approve}.}
+
+Dịch vụ truy cập dữ liệu qua các giao diện trong thư mục \code{Interfaces}. Hồ sơ nhân sự được tra cứu qua \code{IPeopleRepository}. Giao diện \code{IProjectRepository} cung cấp đề tài, loại đề tài và nguồn kinh phí. Dữ liệu hội đồng, bài báo, liên kết và sản phẩm bàn giao được truy cập qua \code{IResultRepository}. Một dịch vụ có thể dùng nhiều giao diện. Chẳng hạn, khi phân công thành viên, dịch vụ đề tài phải tra cứu cả hồ sơ nhà nghiên cứu.
+
+\textbf{Data.} \code{JsonResearchRepository} hiện thực việc lưu trữ qua các giao diện trên. Kho xác định vị trí tệp từ cấu hình tương đối với thư mục chứa ứng dụng. Lần chạy đầu tiên sử dụng dữ liệu mẫu để khởi tạo tệp làm việc. Khi đọc tệp, kho kiểm tra mã trùng và các tham chiếu giữa hồ sơ. Khi ghi, kho tạo tệp tạm trước khi thay tệp dữ liệu chính. Cách xử lý lỗi được trình bày ở mục~\ref{sec:errors-config}.
+
+Khi chương trình chạy, menu gọi dịch vụ, còn dịch vụ làm việc với dữ liệu thông qua các giao diện. Vì các giao diện do tầng nghiệp vụ khai báo, mã dịch vụ không phụ thuộc vào lớp lưu JSON cụ thể. Bộ kiểm thử có thể cấp kho trong bộ nhớ cho cùng dịch vụ, trong khi menu sử dụng kho JSON.
+
+\subsection{Thực thể, thuộc tính và sơ đồ lớp}\label{sec:entities}
+
+Hình~\ref{fig:domain-overview} trình bày 17 kiểu nghiệp vụ theo ký pháp UML \ReportCite{omg2017}. Sơ đồ có 15 lớp cụ thể, một kiểu \code{record} là \code{ProjectStatusHistory} và lớp trừu tượng \code{ResearchOutput}. Bội số trong mô hình tổng thể áp dụng cho hồ sơ hợp lệ đã lưu. Các hình chi tiết phân theo nhân sự, đề tài và kinh phí (Hình~\ref{fig:domain-a}), hội đồng (Hình~\ref{fig:council}) và đầu ra nghiên cứu (Hình~\ref{fig:domain-b}).
+\ReportUml{03-lop-tong-the}{fig:domain-overview}{Mô hình lớp nghiệp vụ tổng thể}
+
+\textbf{Đơn vị và nhà nghiên cứu.} Một đơn vị có thể thay đổi người phụ trách qua các thời kỳ. Lớp \code{DepartmentHeadTerm} biểu diễn từng nhiệm kỳ bằng mã đơn vị, mã nhà nghiên cứu và khoảng thời gian đảm nhiệm. Mỗi nhiệm kỳ có bản ghi riêng nên khi tra cứu, người dùng có thể xem cả các nhiệm kỳ đã kết thúc. Hồ sơ \code{Researcher} có thể được cập nhật qua \code{Update}. Những kiểm tra cần đối chiếu với hồ sơ khác, như xác nhận đơn vị tồn tại hoặc email chưa được sử dụng, thuộc về \code{PeopleService}.
+
+\textbf{Đề tài và thành viên.} Một nhà nghiên cứu có thể là chủ nhiệm ở đề tài này và là thành viên ở đề tài khác. Vì vậy, vai trò được lưu trong \code{ProjectParticipation}, cùng mã nhà nghiên cứu và mã đề tài. \code{ResearchProject} quản lý danh sách thành viên để áp dụng những quy tắc riêng của từng đề tài. Loại đề tài là mục dùng chung trong danh mục \code{ProjectCategory}. Khi trạng thái thay đổi, một bản ghi \code{ProjectStatusHistory} lưu lại trạng thái trước, trạng thái sau, thời điểm và mã tác nhân do dịch vụ cung cấp.
+
+\textbf{Nguồn và đợt phân bổ kinh phí.} Một nguồn có thể cấp kinh phí nhiều lần cho cùng đề tài hoặc cho các đề tài khác nhau. \code{FundingSource} mô tả nguồn cấp, còn \code{FundingAllocation} biểu diễn từng đợt với số tiền và ngày cấp cụ thể. \code{ResearchProject} kiểm tra mã đề tài và mã đợt trước khi bổ sung vào danh sách. Tổng kinh phí được tính từ những đợt đã ghi, vì vậy không cần duy trì một số tổng riêng bên cạnh các khoản phân bổ.
+
+Hình~\ref{fig:domain-a} đặt các lớp nhân sự, đề tài và kinh phí cạnh nhau để thấy hai loại dữ liệu được truy cập khác nhau. Mỗi đợt phân bổ thuộc một đề tài và tham chiếu một nguồn có trong danh mục. Một nguồn vừa được tạo có thể chưa cấp kinh phí cho đề tài nào. Khi lập báo cáo theo nguồn, chương trình gộp các đợt có cùng mã nguồn, kể cả khi chúng thuộc nhiều đề tài khác nhau. Nếu chỉ lưu tổng tiền của từng đề tài, chương trình sẽ không còn dữ liệu để xác định nguồn nào đã cấp bao nhiêu.
+
+\ReportWideUml{04-lop-phan-he-a}{fig:domain-a}{Các lớp nhân sự, đề tài và kinh phí}
+
+\textbf{Hội đồng nghiệm thu.} Mỗi \code{CouncilMembership} gắn mã nhà nghiên cứu với một vị trí trong một hội đồng. \code{CouncilRole} mô tả vị trí đó, còn \code{ProjectRole} mô tả nhiệm vụ trong một đề tài. Cùng một mã nhà nghiên cứu có thể xuất hiện trong cả hai danh sách. \code{UserRole} được giữ trong \code{CurrentUserContext} để dịch vụ xác định nhóm thao tác của phiên đang chạy. Khi kiểm tra quyền với một hồ sơ cụ thể, dịch vụ hoặc mô hình vẫn cần tra phân công theo mã nhà nghiên cứu.
+\ReportUml{05-lop-hoi-dong}{fig:council}{Các lớp hội đồng nghiệm thu}
+
+\textbf{Kết quả nghiên cứu.} Bài báo và sản phẩm bàn giao cùng có mã và tiêu đề, được khai báo trong lớp \code{ResearchOutput}. Quan hệ tác giả cần thêm thứ tự và thông tin tác giả liên hệ, nên \code{PaperAuthor} được tách khỏi hồ sơ nhà nghiên cứu. Một bài báo có thể là kết quả của nhiều đề tài. \code{ProjectPaperLink} ghi nhận mối liên hệ này để bài báo chỉ cần một hồ sơ. Với sản phẩm bàn giao, mỗi bản ghi thuộc một đề tài và có số lượng theo một loại trong danh mục \code{DeliverableType}.
+\ReportUml{06-lop-ket-qua}{fig:domain-b}{Các lớp kết quả nghiên cứu}
+
+\subsection{Quan hệ giữa các lớp}\label{sec:uml-relations}
+
+Để đọc bội số trong Hình~\ref{fig:domain-overview}, chọn một đối tượng ở một đầu quan hệ rồi đọc số lượng đối tượng ở đầu kia. Chẳng hạn, mỗi hồ sơ nhà nghiên cứu thuộc một đơn vị. Một đơn vị vừa được tạo có thể chưa có nhà nghiên cứu, nên bội số phía nhà nghiên cứu là \code{0..*}. Hai hồ sơ liên kết qua mã đơn vị. Khi chuyển đơn vị, nhà nghiên cứu giữ nguyên mã, nên các phân công đề tài và thông tin tác giả có thể tiếp tục tham chiếu hồ sơ đó.
+
+Trong quan hệ hợp thành, hình thoi đặc nằm ở đầu đối tượng sở hữu bản ghi thành phần. Chẳng hạn, \code{ProjectParticipation} được lưu cùng hồ sơ đề tài, còn nhà nghiên cứu được tham chiếu bằng mã. Đề tài giữ danh sách tham gia để kiểm tra vị trí chủ nhiệm. Nó cũng giữ lịch sử chuyển trạng thái. Bội số \code{0..2} của lịch sử xuất phát từ hai bước chuyển hợp lệ. Đề xuất mới chưa có lần chuyển nào, đề tài đang thực hiện có một lần, còn hồ sơ đã hoàn thành có cả hai. Khi nạp lại JSON, chương trình kiểm tra chuỗi này khớp với trạng thái được lưu.
+
+Một đề tài có thể chưa có hội đồng, kể cả sau khi đã được phê duyệt. Khi chuyên viên lập hội đồng, dịch vụ kiểm tra đề tài đang thực hiện và chưa có hội đồng khác. Vì vậy, bội số phía hội đồng là \code{0..1}. Danh sách phân công nằm trong hội đồng. Mỗi phân công giữ vị trí của nhà nghiên cứu trong hội đồng đó để lớp hội đồng có thể xác định người được phép ghi điểm.
+
+Trong bài báo, \code{PaperAuthor} lưu thứ tự và cho biết ai là tác giả liên hệ. Mỗi \code{ProjectPaperLink} ghi một cặp mã bài báo và mã đề tài. Cách lưu này cho phép một hồ sơ bài báo liên kết với nhiều đề tài mà không nhân bản tiêu đề, DOI hay danh sách tác giả. Menu tạo liên kết đầu tiên khi ghi bài mới. Khi nạp dữ liệu, kho kiểm tra mỗi bài có ít nhất một liên kết hợp lệ. Sản phẩm bàn giao gắn trực tiếp với mã của một đề tài, nên không cần bản ghi liên kết riêng. Quan hệ kế thừa giữa các kiểu đầu ra được trình bày ở Hình~\ref{fig:domain-b}.
+
+Hình~\ref{fig:architecture} trình bày kiến trúc ba tầng. Kho trong bộ nhớ hiện thực các giao diện dữ liệu và kho JSON kế thừa kho này. Hình~\ref{fig:integration-contracts} tập trung vào hợp đồng nghiệm thu. Qua \code{ICompletionEvidence}, dịch vụ đề tài kiểm tra điểm và đầu ra theo mã đề tài. Phân hệ kết quả chịu trách nhiệm tìm những dữ liệu đó từ các hồ sơ liên quan.
+
+\subsection{Sơ đồ tuần tự}\label{sec:sequences}
+
+Hình~\ref{fig:proposal} theo dõi đề xuất từ lúc kiểm tra hồ sơ và mã đến khi lưu đề tài ở trạng thái \code{Pending}. Hình~\ref{fig:assign-project} minh họa lệnh gán thành viên. Ở lệnh phê duyệt riêng trong Hình~\ref{fig:sequence-uc03}, đề tài giao yêu cầu cho đối tượng trạng thái hiện tại rồi dịch vụ mới lưu kết quả.
+\ReportWideUml{18-de-xuat-de-tai}{fig:proposal}{Đề xuất đề tài nghiên cứu (UC02)}
+\ReportWideUml{07-gan-thanh-vien}{fig:assign-project}{Gán thành viên đề tài (UC03)}
+\ReportWideUml{08-phe-duyet}{fig:sequence-uc03}{Phê duyệt đề tài (UC03)}
+
+Ở Hình~\ref{fig:sequence-uc04}, \code{FundingService} kiểm tra dữ liệu trên toàn kho trước khi ghi đợt phân bổ. Đề tài bổ sung đợt hợp lệ vào danh sách kinh phí. Menu đọc và hiển thị tổng mới sau khi lưu thành công. Mốc này giúp phân biệt việc tính được số tiền với việc đã ghi thay đổi xuống tệp.
+
+\ReportUml{09-phan-bo-kinh-phi}{fig:sequence-uc04}{Ghi một đợt phân bổ kinh phí (UC04)}
+
+Thành lập hội đồng và phân công là hai lệnh menu riêng (Hình~\ref{fig:create-council}). Chuyên viên có thể quay lại phân công vào lần thao tác sau vì hội đồng đã có mã riêng. Trong UC06a, dịch vụ chuyển yêu cầu ghi điểm đến đối tượng hội đồng (Hình~\ref{fig:record-score}). Ở UC06b, dịch vụ đề tài dùng \code{ICompletionEvidence} để kiểm tra điều kiện hoàn thành (Hình~\ref{fig:uc06}). Hai thao tác có điểm vào và đối tượng được cập nhật khác nhau. Thứ tự kiểm tra khi xác nhận hoàn thành được phân tích ở mục~\ref{sec:implementation-integration}.
+\ReportUml{10-lap-hoi-dong}{fig:create-council}{Thành lập và phân công hội đồng nghiệm thu (UC05)}
+
+Ở Hình~\ref{fig:uc07}, dịch vụ gọi \code{PaperCreator} để tạo bài báo, rồi gửi bài báo và mã đề tài đến kho kết quả.
+
+Các khung điều kiện giúp đọc sơ đồ theo từng tình huống. Trong Hình~\ref{fig:uc06}, khung \texttt{opt} giới hạn việc tra cứu đầu ra ở nhánh đã có điểm, còn \texttt{break} kết thúc yêu cầu nếu thiếu bằng chứng. Khung \texttt{alt} dành cho bước xử lý theo trạng thái sau các kiểm tra này. Trong Hình~\ref{fig:uc07}, khung \texttt{loop} chỉ lặp việc thêm từng tác giả vào bài báo. Lời gọi lưu nằm sau vòng lặp và sau các bước kiểm tra của dịch vụ.
+
+\ReportWideUml{11-ghi-diem}{fig:record-score}{UC06a – Ghi điểm nghiệm thu}
+\ReportUml[.93]{12-hoan-thanh}{fig:uc06}{UC06b – Xác nhận hoàn thành}
+\ReportUml{13-ghi-bai-bao}{fig:uc07}{Ghi một bài báo cùng liên kết đề tài (UC07)}
+
+\ReportChapter{Nguyên lý OOP và mẫu thiết kế}\label{sec:oop}
+\subsection{Bốn đặc trưng hướng đối tượng}\label{sec:oop-features}
+
+\textbf{Đóng gói.} Trong \code{ResearchProject}, thuộc tính \code{Members} trả về danh sách chỉ đọc. Việc thêm thành viên đi qua \code{AddMember}. Trước khi thêm bản ghi vào danh sách riêng, phương thức kiểm tra trạng thái đề tài, mã nhà nghiên cứu và giới hạn một chủ nhiệm, như ở \ReportCodeRef{lst:add-member}.
+
+\begin{ReportCode}[firstnumber=68,commandchars=§«»]{Kiểm tra điều kiện trước khi gán thành viên}{lst:add-member}
+    public void AddMember(string researcherId, ProjectRole role)
+    {
+        researcherId = Guard.Required(researcherId, nameof(researcherId));
+        if (Status != ProjectStatus.Pending) throw new InvalidOperationException(§ReportLiteral«"Chỉ sửa thành viên khi đề tài đang chờ duyệt."»);
+        if (_members.Any(m => m.ResearcherId.Equals(researcherId, StringComparison.OrdinalIgnoreCase)))
+            throw new InvalidOperationException(§ReportLiteral«"Nhà nghiên cứu đã có trong đề tài."»);
+        if (role == ProjectRole.Leader && _members.Any(m => m.Role == ProjectRole.Leader))
+            throw new InvalidOperationException(§ReportLiteral«"Đề tài đã có chủ nhiệm."»);
+        _members.Add(new ProjectParticipation(Id, researcherId, role));
+    }
+\end{ReportCode}
+
+\ReportCodeSource{\code{Business/Models/Projects.cs}, phương thức \code{AddMember}.}
+
+\code{AsReadOnly()} bọc danh sách hiện tại để bên ngoài chỉ đọc. Thông tin về thành viên vừa được thêm có thể đọc qua \code{Members}. Quyền gán thành viên và sự tồn tại của hồ sơ nhà nghiên cứu được kiểm tra ở \code{ProjectService.AssignMember}, vì bản ghi tham gia chỉ giữ mã và vai trò của người được gán.
+
+Ở hội đồng, \code{EvaluationCouncil} cho phép đọc \code{Score} nhưng giữ thao tác gán điểm bên trong lớp. Dịch vụ chịu trách nhiệm kiểm tra vai trò đang sử dụng và trạng thái đề tài. Hội đồng có danh sách phân công của chính mình, nên \code{RecordScore} đối chiếu mã người nhập với \code{ChairmanId} rồi mới kiểm tra khoảng điểm. Nếu hội đồng chưa có chủ tịch hoặc mã người nhập không khớp, điểm giữ nguyên.
+
+\textbf{Trừu tượng hóa.} Để xác nhận hoàn thành, \code{ProjectService} cần hai câu trả lời về điểm nghiệm thu và đầu ra. \code{ICompletionEvidence} biểu diễn mỗi câu trả lời bằng một giá trị đúng hoặc sai theo mã đề tài. Trong ứng dụng, lớp \code{ResultCompletionEvidence} tra hội đồng và tập hợp kết quả từ kho. Trong ca A-BRIDGE, dữ liệu do \code{FakeCompletionEvidence} cung cấp. Cùng một dịch vụ có thể được kiểm tra với các giá trị định trước mà không cần lập hội đồng hoặc tạo bài báo. Hình~\ref{fig:integration-contracts} trình bày các kiểu tham gia vào phần xác nhận này.
+
+\ReportUml{14-hop-dong-nghiem-thu}{fig:integration-contracts}{Hợp đồng nghiệm thu và lưu trữ giữa hai phân hệ}
+
+\textbf{Kế thừa.} \code{Paper} và \code{ProjectDeliverable} chuyển mã và tiêu đề vào hàm dựng của \code{ResearchOutput}. Việc kiểm tra hai chuỗi bắt buộc vì vậy chỉ cần viết ở lớp gốc. Mỗi lớp con giữ dữ liệu riêng, như danh sách tác giả của bài báo hay số lượng của sản phẩm bàn giao, và ghi đè \code{Validate} để kiểm tra các quy tắc tương ứng.
+
+\textbf{Đa hình.} Khi tra cứu, \code{ProjectLookupService} duyệt một danh sách \code{ResearchOutput} gồm bài báo và sản phẩm bàn giao. Với từng phần tử, dịch vụ gọi \code{GetDisplaySummary()}. Cùng lời gọi đó cho ra nơi công bố, năm và số tác giả đối với bài báo, hoặc mã loại và số lượng đối với sản phẩm bàn giao. \ReportCodeRef{lst:lookup-summary} minh họa lời gọi này trong phần tạo kết quả tra cứu.
+
+\subsection{Thiết kế cơ sở 1.0 và mở rộng 1.1}\label{sec:design-versions}
+
+Bảng~\ref{tab:design-versions} dùng 1.0 để chỉ phần thiết kế cơ sở và 1.1 để chỉ các điểm mở rộng đã có trong chương trình. Các điểm mở rộng gồm lưu tệp và bổ sung cách tổng hợp trên cùng dữ liệu. Lịch sử tích hợp được trình bày ở mục~\ref{sec:git-history}.
+
+\begin{table}[!htbp]
+\caption{Thiết kế cơ sở và các điểm mở rộng đã cài đặt}\label{tab:design-versions}
+\small\singlespacing
+\renewcommand{\arraystretch}{1.13}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.17\linewidth}LL@{}}
+\toprule
+\textbf{Phần} & \textbf{Thiết kế cơ sở 1.0} & \textbf{Mở rộng 1.1 và thành phần dùng chung} \\
+\midrule
+Kho dữ liệu chung & Dịch vụ đọc, ghi dữ liệu qua các giao diện với kho trong bộ nhớ. & Kho JSON kế thừa thao tác tra cứu, ghi đè \code{Save} để lưu dữ liệu qua các phiên. Dịch vụ tiếp tục sử dụng các giao diện kho. \\
+Kinh phí (A) & \code{FundingByProjectStrategy} tính tổng kinh phí của từng đề tài. & \code{FundingBySourceStrategy} tổng hợp theo nguồn cấp qua cùng phương thức \code{BuildRows}. \\
+Kết quả nghiên cứu (B) & \code{OutputByProjectStrategy} tổng hợp theo đề tài. & \code{OutputByTypeStrategy} tổng hợp theo loại. Hai lớp dẫn xuất từ \code{ResearchOutput} ghi đè \code{Validate} và \code{GetDisplaySummary}. Hai lớp khởi tạo dùng chung quy trình \code{Build}, với phần \code{Create} được ghi đè. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Trong lịch sử Git, hai lớp Strategy của A được thêm trong cùng commit \code{1bf9530}. Tương tự, hai lớp Strategy của B được thêm trong cùng commit \code{5dafb57}. Các cột 1.0 và 1.1 giúp đọc quan hệ mở rộng trong thiết kế.
+
+\subsection{State, Strategy và Factory Method}\label{sec:patterns}
+
+Chương trình vận dụng hai mẫu hành vi State và Strategy, cùng mẫu khởi tạo Factory Method \ReportCite{gamma1995}.
+
+\subsubsection{State trong vòng đời đề tài}\label{sec:pattern-state}
+
+Lệnh phê duyệt có ý nghĩa khác nhau với một đề tài chờ duyệt và một đề tài đang thực hiện. \code{ResearchProject.Approve} vẫn là điểm gọi chung. Từ giá trị \code{Status}, \code{StateFor} chọn đối tượng thực thi \code{IProjectState}, rồi \code{Approve} chuyển yêu cầu cho đối tượng đó. \code{PendingState} kiểm tra đề tài có đúng một chủ nhiệm trước khi chuyển trạng thái. Với cùng yêu cầu, \code{ActiveState} báo đề tài đã được duyệt. Luồng gọi từ dịch vụ đến trạng thái chờ duyệt nằm ở Hình~\ref{fig:sequence-uc03}.
+
+Thao tác hoàn thành cũng được giao theo cách này. Dịch vụ kiểm tra bằng chứng của đề tài trước khi gọi mô hình. \code{ActiveState} quyết định bước chuyển từ \code{Active} sang \code{Completed}, còn \code{ChangeStatus} của đề tài ghi trạng thái trước, trạng thái sau, thời điểm và tác nhân rồi cập nhật \code{Status}. Khi đọc lại JSON, \code{ResearchProject.Restore} kiểm tra lịch sử đã lưu và khôi phục đúng trạng thái cuối mà không tạo thêm bản ghi chuyển trạng thái.
+
+Hình~\ref{fig:state-classes} thể hiện các lớp cài đặt State. Hình~\ref{fig:lifecycle} thể hiện vòng đời nghiệp vụ và điều kiện chuyển trạng thái.
+\ReportUml{15-state}{fig:state-classes}{Cấu trúc lớp của mẫu State}
+\clearpage
+\begin{ReportFigureHere}
+  \caption{Vòng đời đề tài nghiên cứu}\label{fig:lifecycle}
+  \ReportUmlGraphic{.52}{20-vong-doi-de-tai}
+\end{ReportFigureHere}
+
+\code{StateFor} dùng \code{switch} để ánh xạ giá trị enum sang lớp trạng thái. Hồ sơ JSON lưu giá trị enum và lịch sử, nên khi mở lại ứng dụng, đề tài có thể chọn đúng lớp xử lý cho lần gọi tiếp theo.
+
+\Needspace{24\baselineskip}
+\subsubsection{Strategy cho báo cáo kinh phí và đầu ra}\label{sec:pattern-strategy}
+
+Hai báo cáo kinh phí dùng cùng dữ liệu phân bổ. Báo cáo theo đề tài đọc \code{TotalFunding} để trả lời mỗi đề tài đã nhận bao nhiêu. Báo cáo theo nguồn gom các đợt phân bổ theo mã nguồn và cộng số tiền trong từng nhóm. Nguồn chưa phát sinh đợt cấp nào sẽ vắng mặt trong bảng này.
+
+Với đầu ra, kết quả thay đổi theo đơn vị đếm. Một bản ghi sản phẩm có số lượng 2 đóng góp một đầu ra vào báo cáo theo đề tài và hai sản phẩm vào tổng của loại tương ứng. Báo cáo theo loại giữ số bài báo ở một dòng riêng. Khi cộng số lượng sản phẩm theo nhóm, chương trình chuyển từng số lượng \code{int} sang \code{decimal} trước khi tính tổng.
+
+Mỗi cách tổng hợp triển khai \code{BuildRows()} của \code{IReportStrategy} và điền đơn vị vào \code{ReportRow}. Menu chọn lớp cụ thể từ lệnh của người dùng. \ReportCodeRef{lst:strategy-generate} cho thấy \code{ReportService} kiểm tra quyền rồi gọi cùng một phương thức trên đối tượng được truyền vào.
+
+\begin{ReportCode}[firstnumber=10,gobble=4]{Kiểm tra quyền và chạy chiến lược báo cáo}{lst:strategy-generate}
+    public IReadOnlyList<ReportRow> Generate(CurrentUserContext user, IReportStrategy strategy)
+    {
+        ArgumentNullException.ThrowIfNull(strategy);
+        if (user.Role != UserRole.Officer)
+            throw new UnauthorizedAccessException("Chỉ Chuyên viên mới được xem báo cáo.");
+
+        return strategy.BuildRows().ToList();
+    }
+\end{ReportCode}
+\ReportCodeSource{\code{Business/Services/ReportService.cs}, trích phương thức \code{Generate}.}
+
+Hình~\ref{fig:strategy-classes} đối chiếu bốn lớp triển khai. Hình~\ref{fig:report-sequence} minh họa cách menu chọn chiến lược kinh phí theo đề tài rồi gọi dịch vụ báo cáo.
+\ReportWideUml{16-strategy}{fig:strategy-classes}{Cấu trúc lớp của mẫu Strategy}
+\ReportWideUml{19-tong-hop-bao-cao}{fig:report-sequence}{Tổng hợp báo cáo kinh phí theo đề tài (UC08)}
+
+\subsubsection{Factory Method cho bài báo và sản phẩm}\label{sec:pattern-factory}
+Bài báo cần được tạo cùng danh sách tác giả. Sản phẩm bàn giao cần mã loại và số lượng. \code{ResearchOutputCreator.Build} giữ phần quy trình dùng chung, từ gọi \code{Create} đến kiểm tra đối tượng qua \code{Validate}. Trong \ReportCodeRef{lst:factory}, mỗi lớp tạo cụ thể ghi đè \code{Create} để trả về đúng kiểu kết quả.
+
+\begin{ReportCode}[firstnumber=17,gobble=4]{Tạo và kiểm tra đầu ra qua lớp cơ sở}{lst:factory}
+    protected abstract ResearchOutput Create(OutputDraft draft);
+
+    public ResearchOutput Build(OutputDraft draft)
+    {
+        ArgumentNullException.ThrowIfNull(draft);
+        var output = Create(draft);
+        output.Validate();
+        return output;
+    }
+\end{ReportCode}
+\ReportCodeSource{\code{Business/Services/ResearchOutputCreators.cs}, trích lớp \code{ResearchOutputCreator}.}
+
+\code{PaperCreator} nhận \code{PaperDraft}, tạo bài báo và thêm từng tác giả. Khi \code{Build} gọi \code{Validate}, lớp \code{Paper} kiểm tra bài báo có ít nhất một tác giả và đúng một tác giả liên hệ. \code{DeliverableCreator} nhận \code{DeliverableDraft}, còn \code{ProjectDeliverable.Validate} kiểm tra số lượng dương. Trong \code{OutputService}, mỗi lệnh ghi đầu ra chọn lớp tạo tương ứng và gọi \code{Build} qua kiểu cơ sở. Dịch vụ kiểm tra các điều kiện cần dữ liệu từ kho, như quyền ghi đầu ra của người dùng với đề tài và tính duy nhất của DOI.
+
+Hình~\ref{fig:factory-classes} thể hiện quan hệ giữa lớp tạo và hai kiểu kết quả.
+\ReportWideUml{17-factory-method}{fig:factory-classes}{Cấu trúc lớp của mẫu Factory Method}
+
+\subsection{Đánh giá thiết kế}\label{sec:design-review}
+
+\textbf{Vòng đời đề tài.} Với ba trạng thái và hai thao tác chuyển trạng thái, có thể viết các nhánh xử lý trực tiếp trong đề tài. Cách dùng State hiện tại gom các quyết định của từng giai đoạn vào cùng một lớp. Ví dụ, \code{PendingState} có đủ hành vi để xử lý cả yêu cầu duyệt lẫn yêu cầu hoàn thành khi đề tài đang chờ duyệt. Ngoài lớp mới, việc bổ sung trạng thái còn đòi hỏi cập nhật enum, ánh xạ của \code{StateFor} và quy tắc kiểm tra lịch sử của \code{Restore}. Tách lớp giúp đọc quy tắc theo từng giai đoạn, còn khả năng đọc lại hồ sơ phụ thuộc vào cả phần khôi phục.
+
+\textbf{Báo cáo.} Strategy tách cách gom số liệu khỏi bước kiểm tra quyền. Khi cần một phép tổng hợp mới dùng được cấu trúc \code{ReportRow}, có thể thêm lớp triển khai \code{BuildRows()} và gắn vào menu, còn \code{Generate} tiếp tục gọi qua giao diện chung. Một báo cáo cần cột dữ liệu mới có thể làm thay đổi cấu trúc kết quả và cách in. Tính đúng của số liệu cũng phụ thuộc vào đơn vị mà từng Strategy trả về. Menu chỉ cộng dòng tổng khi các dòng có cùng đơn vị, như cách tránh cộng số bài báo với số sản phẩm.
+
+\textbf{Khởi tạo kết quả.} Factory Method giúp áp dụng \code{Validate()} sau khi tạo cả bài báo lẫn sản phẩm. Hợp đồng chung nhận \code{OutputDraft} và trả \code{ResearchOutput}, nên các lớp tạo hiện có kiểm tra kiểu đầu vào trước khi đọc thuộc tính riêng. Để lưu kết quả, dịch vụ ép kiểu đối tượng về đúng loại đã chọn. Khi thêm loại đầu ra, nhóm có thể dùng lại quy trình tạo và kiểm tra nhưng vẫn cần quyết định cách nhập, lưu và đưa loại đó vào báo cáo.
+
+\textbf{Kho dữ liệu.} Chữ ký hàm khởi tạo của dịch vụ cho biết nó cần nhóm dữ liệu nào, chẳng hạn \code{ProjectLookupService} cần kho đề tài và kho kết quả. Menu truyền cùng một đối tượng kho JSON qua các giao diện này, còn các ca kiểm thử dịch vụ có thể cấp kho trong bộ nhớ. Các phương thức tra cứu ở kho trong bộ nhớ trả về đối tượng đang được giữ trong kho. Nếu dịch vụ đã cập nhật đối tượng, một lỗi ghi tệp có thể khiến bộ nhớ giữ dữ liệu chưa được lưu. Phần xử lý tình huống này được mô tả ở mục~\ref{sec:errors-config}.
+
+\textbf{Lưu JSON.} Tệp cục bộ thuận tiện khi cần sao chép dữ liệu cho buổi trình diễn và xem lại hồ sơ. Mỗi lần \code{Persist}, kho tạo bản chụp cho cả hai phân hệ và ghi lại toàn bộ tệp. Ngay cả một thay đổi nhỏ như thêm một thành viên hội đồng cũng phải ghi lại các đề tài và kết quả đã lưu. Lần mở tiếp theo đọc các bản ghi theo thứ tự để kiểm tra mã liên kết và khôi phục mô hình. Phương án này phù hợp với cách trình diễn trên một phiên. Nếu nhiều tiến trình cùng mở tệp, mỗi tiến trình có bản chụp riêng, nên việc bảo toàn các thay đổi từ nhiều phiên cần cơ chế phối hợp ghi.
+
+Hai phân hệ dùng \code{PascalCase} cho tên kiểu và phương thức, tiền tố gạch dưới cho trường riêng như \code{_members} và thông báo nghiệp vụ bằng tiếng Việt.
+
+\ReportChapter{Cài đặt các chức năng chính}\label{sec:implementation}
+\subsection{UC06b: Xác nhận hoàn thành qua hai phân hệ}\label{sec:implementation-integration}
+
+Ở mục 16, menu gọi \code{ProjectService.Complete} với mã đề tài và đối tượng cung cấp bằng chứng nghiệm thu của phân hệ B. Lớp \code{ResultCompletionEvidence} tra hội đồng theo mã đề tài để xác định đã có điểm hay chưa. Phép kiểm tra đầu ra dùng cùng cách truy vấn bài báo và sản phẩm với phần tra cứu ở mục~\ref{sec:implementation-reporting}. Dịch vụ của phân hệ A nhận các kết quả qua \code{ICompletionEvidence}.
+
+Sau khi kiểm tra quyền và tìm được đề tài, dịch vụ kiểm tra điểm trước như trong \ReportCodeRef{lst:complete-evidence}. Toán tử \code{||} đánh giá ngắn mạch. Nếu chưa có điểm thì vế đầu đã đúng, nên dịch vụ bỏ qua truy vấn đầu ra và từ chối yêu cầu. Khi cả hai loại bằng chứng đã có, dịch vụ mới gọi \code{project.Complete}. Lệnh lưu nằm sau lời gọi này, vì trạng thái hiện tại vẫn có thể từ chối thao tác, chẳng hạn khi đề tài đã hoàn thành.
+
+\begin{ReportCode}[firstnumber=47,gobble=8]{Kiểm tra bằng chứng trước khi xác nhận hoàn thành}{lst:complete-evidence}
+        if (!evidence.HasScoredCouncil(projectId) || !evidence.HasResearchOutput(projectId))
+            throw new InvalidOperationException("Cần điểm nghiệm thu và ít nhất một đầu ra để hoàn thành đề tài.");
+        project.Complete("OFFICER", DateTimeOffset.Now);
+        projects.Save(project);
+\end{ReportCode}
+\ReportCodeSource{\code{Business/Services/ProjectService.cs}, trích \code{Complete}.}
+
+\subsection{Luồng xử lý tiêu biểu}\label{sec:implementation-flow}
+
+\subsubsection{Kiểm tra dữ liệu nhân sự và đề tài}
+
+Khi sửa các trường cơ bản của nhà nghiên cứu ở mục 4, menu chuyển tiếp học hàm hoặc học vị, số điện thoại, tổ chức và thông tin giảng viên từ hồ sơ hiện có. \code{SaveResearcher} kiểm tra email bằng cách đối chiếu với các hồ sơ khác. Ở luồng đề xuất, \code{ProposeProject} dùng cùng một mã đã bỏ khoảng trắng hai đầu để tra cứu trùng và khởi tạo đề tài. Kho so sánh mã không phân biệt chữ hoa và chữ thường. Hàm khởi tạo của \code{ResearchProject} kiểm tra tên và khoảng thời gian, nên các điều kiện đó vẫn được áp dụng khi đối tượng được tạo ngoài menu.
+
+Khi gán thành viên, \code{ProjectService.AssignMember} tìm hồ sơ nhà nghiên cứu và đề tài rồi gọi \code{AddMember} trên đối tượng đề tài. Với phê duyệt, dịch vụ cũng chỉ lưu sau khi mô hình chấp nhận thay đổi. Thứ tự gọi trong \ReportCodeRef{lst:approve-service} giúp xác định lỗi xảy ra lúc kiểm tra phê duyệt hay lúc ghi tệp. Mục~\ref{sec:errors-config} trình bày hai cách xử lý tương ứng.
+
+\subsubsection{UC04: Ghi đợt cấp và tính tổng kinh phí}
+
+Mã đợt phân bổ phải duy nhất trên toàn hệ thống, nên \code{FundingService.Allocate} kiểm tra các khoản cấp của mọi đề tài bằng mã đã bỏ khoảng trắng hai đầu. Phép cộng cũng cần xét dữ liệu toàn hệ thống vì một báo cáo theo nguồn có thể cộng các khoản của nhiều đề tài. \ReportCodeRef{lst:allocation-save} minh họa cách dịch vụ phát hiện tổng vượt phạm vi \code{decimal} trước khi đưa khoản cấp vào hồ sơ.
+
+\begin{ReportCode}[firstnumber=32,gobble=8]{Kiểm tra tổng kinh phí trước khi thêm khoản cấp}{lst:allocation-save}
+        var allocation = new FundingAllocation(normalizedId, project.Id, source.Id, amount, allocatedAt);
+        // Báo cáo cộng chung tất cả đề tài, nên kiểm tra tổng trước khi thay đổi hồ sơ.
+        try
+        {
+            _ = projects.Projects.Sum(item => item.TotalFunding) + allocation.Amount;
+        }
+        catch (OverflowException ex)
+        {
+            throw new InvalidOperationException("Khoản cấp làm tổng kinh phí vượt phạm vi decimal.", ex);
+        }
+\end{ReportCode}
+\ReportCodeSource{\code{Business/Services/FundingService.cs}, trích \code{Allocate}.}
+
+Sau khi phép cộng hợp lệ, \code{ResearchProject.AddAllocation} kiểm tra mã đề tài trên khoản cấp rồi thêm khoản đó vào danh sách. Dịch vụ lưu đề tài đã cập nhật và menu dùng \code{TotalForProject} để hiển thị tổng mới của đề tài.
+
+\subsubsection{UC05: Lập hội đồng và phân công}
+
+Ở mục 13, chuyên viên nhập mã hội đồng, mã đề tài và ngày nghiệm thu. Phương thức \code{CreateCouncil} kiểm tra đề tài đang thực hiện. Dịch vụ tra mã hội đồng và mã đề tài riêng. Ngay cả khi mã hội đồng chưa được dùng, yêu cầu vẫn bị từ chối nếu đề tài đã có hội đồng.
+
+Sau khi có hội đồng, mục 14 cho phép phân công từng người theo mã nhà nghiên cứu và vai trò. Dịch vụ tra hồ sơ nhân sự, còn \code{EvaluationCouncil.AddMember} kiểm tra vai trò có hợp lệ, người đó đã có trong danh sách hay hội đồng đã có chủ tịch. Hội đồng vừa tạo có thể chưa có chủ tịch. Việc phân công diễn ra qua các lần gọi riêng, mỗi lần thành công đều lưu hội đồng đã cập nhật. Trình tự lập và phân công được minh họa ở Hình~\ref{fig:create-council}.
+
+\subsubsection{UC06a: Ghi điểm và khóa danh sách hội đồng}
+
+Trong \code{EvaluationService.RecordScore}, dịch vụ kiểm tra vai trò đang dùng, tìm hội đồng theo mã rồi dùng \code{council.ProjectId} để kiểm tra trạng thái đề tài. Chỉ khi đề tài còn đang thực hiện, dịch vụ mới chuyển mã người nhập và điểm cho hội đồng. Hội đồng kiểm tra người chấm và khoảng điểm như ở mục~\ref{sec:oop-features}. Dịch vụ gọi \code{results.Save(council)} sau khi điểm đã được cập nhật. Menu chỉ thông báo thành công sau khi dịch vụ lưu xong.
+
+\code{Score} có kiểu \code{decimal?}. Khi chưa chấm, giá trị là \code{null}. Sau khi ghi một điểm hợp lệ, kể cả 0, \code{Score.HasValue} trả về đúng và \code{AddMember} từ chối yêu cầu bổ sung thành viên. Cách biểu diễn này cũng giúp bước xác nhận hoàn thành nhận diện hội đồng đã chấm khi điểm là 0.
+
+\subsubsection{UC07: Ghi kết quả nghiên cứu}
+
+\code{AddPaper} và \code{AddDeliverable} cùng kiểm tra nhà nghiên cứu có tham gia đề tài đang thực hiện. Với bài báo, \code{OutputService} đối chiếu danh sách tác giả với kho nhân sự và kiểm tra người nhập có tên trong danh sách. Sau khi \code{PaperCreator} tạo bài báo, dịch vụ kiểm tra trùng mã và trùng DOI nếu có DOI. Phép so sánh DOI dùng giá trị đã bỏ khoảng trắng hai đầu và bỏ qua khác biệt hoa thường. Với sản phẩm, dịch vụ tra loại trong danh mục rồi lưu đối tượng sản phẩm có mã đề tài.
+
+Bài báo được lưu cùng một bản ghi liên kết riêng như trong Hình~\ref{fig:uc07}. Dịch vụ gửi bài báo và mã đề tài vào \code{SavePaperWithLink}. Kho tạo liên kết ngay trong thao tác này để lần ghi JSON chứa đủ hai bản ghi. Cặp dữ liệu đó giúp \code{OutputsOf} tìm được bài khi tra cứu đề tài hoặc kiểm tra bằng chứng hoàn thành.
+
+\subsubsection{UC08: Tổng hợp và tra cứu từ dữ liệu hai phân hệ}\label{sec:implementation-reporting}
+
+Các mục 11, 12, 19 và 20 đi qua \code{ReportService.Generate}. Hai Strategy kinh phí của thành viên A lấy các đợt cấp trong kho đề tài. Hai Strategy đầu ra của thành viên B đọc kho kết quả, trong đó báo cáo theo đề tài còn cần danh sách đề tài của A để tạo dòng cho cả hồ sơ chưa có đầu ra. \code{ReportRow} thống nhất mã, tên, giá trị, đơn vị và ghi chú. \code{PrintReport} dùng các trường đó để trình bày cả bốn báo cáo mà vẫn giữ được đơn vị đo của từng loại.
+
+Mục 21 gọi \code{ProjectLookupService.Search}. Khi nhập cả mã và trạng thái, đề tài phải thỏa cả hai điều kiện. Mã được so sánh không phân biệt hoa thường. Bộ lọc bỏ trống được bỏ qua. Sau khi lọc, dịch vụ tạo một \code{ProjectSummary} cho mỗi đề tài tìm được. \ReportCodeRef{lst:lookup-summary} cho thấy cách ghép hồ sơ và kết quả theo mã đề tài.
+
+\begin{ReportCode}[firstnumber=21,gobble=8]{Tạo bản tóm tắt từ hồ sơ đề tài và kết quả}{lst:lookup-summary}
+            .Select(p => new ProjectSummary(p.Id, p.Title, p.Status, p.TotalFunding,
+                results.FindCouncilByProject(p.Id)?.Score,
+                results.OutputsOf(p.Id).Select(o => o.GetDisplaySummary()).ToList()))
+            .ToList();
+\end{ReportCode}
+\ReportCodeSource{\code{Business/Services/ProjectLookupService.cs}, bước tạo kết quả trong \code{Search}.}
+
+\code{OutputsOf} ghép bài báo qua các liên kết và lấy sản phẩm theo mã đề tài. Phép truy vấn này cũng được dùng khi kiểm tra điều kiện hoàn thành và tổng hợp đầu ra theo đề tài. Phần tra cứu giữ chuỗi mô tả riêng của từng kết quả để chuyên viên xem chi tiết. Nếu chưa có hội đồng hoặc hội đồng chưa ghi điểm, \code{CouncilScore} là \code{null} và menu in \emph{chưa có}. Điểm 0 vẫn được hiển thị bằng số.
+
+\Needspace{7\baselineskip}
+\subsection{Ngoại lệ và cấu hình}\label{sec:errors-config}
+
+\textbf{Khi mở dữ liệu.} Kho đọc \code{config/appsettings.json}, ghép các đường dẫn tương đối với thư mục ứng dụng và sao chép dữ liệu mẫu khi chưa có tệp làm việc. Khi nạp JSON, kho khôi phục đề tài trước hội đồng và đầu ra để kiểm tra các mã tham chiếu. Chẳng hạn, mỗi bài báo phải có liên kết với một đề tài đã qua phê duyệt. Kho chỉ đối chiếu điểm và đầu ra của đề tài đã hoàn thành sau khi nạp đủ dữ liệu hai phân hệ. Với các lỗi mở dữ liệu được xử lý ở \code{Program.cs}, chương trình in nguyên nhân và trả mã thoát 1 trước khi vào menu.
+
+\textbf{Khi một thao tác bị từ chối.} Menu yêu cầu nhập lại nếu số tiền phân bổ chưa phải số đồng nguyên dương trong phạm vi cho phép. Nếu dữ liệu đúng định dạng nhưng vi phạm quy tắc, chẳng hạn DOI đã được dùng, dịch vụ dừng trước bước lưu. \code{ConsoleMenu.Run} hiển thị thông báo để người dùng có thể chọn thao tác tiếp theo.
+
+\textbf{Khi không ghi được tệp.} \code{Persist} tạo bản chụp dữ liệu từ bộ nhớ, ghi JSON vào tệp tạm rồi dùng \code{File.Move} để thay tệp chính. Nếu bước này phát sinh \code{DataPersistenceException}, \code{SavePaperWithLink} gỡ bài báo và liên kết vừa thêm khỏi bộ nhớ rồi chuyển lỗi lên nơi gọi, như trong \ReportCodeRef{lst:paper-persist}.
+
+\begin{ReportCode}[firstnumber=60,gobble=8]{Hoàn tác dữ liệu bài báo mới khi ghi JSON thất bại}{lst:paper-persist}
+        base.SavePaperWithLink(paper, projectId);
+        try
+        {
+            // Một lần thay tệp chính cho cả bài báo và liên kết.
+            Persist();
+        }
+        catch (DataPersistenceException)
+        {
+            UndoNewPaper(paper.Id);
+            throw;
+        }
+\end{ReportCode}
+\ReportCodeSource{\code{Data/JsonResearchRepository.cs}, trích \code{SavePaperWithLink}.}
+
+Phần hoàn tác trên áp dụng cho bài báo mới và liên kết trong bộ nhớ. Các lệnh \code{Save} thông thường cập nhật bộ nhớ trước khi gọi \code{Persist}, nên khi ghi thất bại, dữ liệu giữa bộ nhớ và đĩa có thể lệch nhau. Kho chặn các lần lưu tiếp theo và menu kết thúc phiên với mã thoát 1.
+
+\ReportChapter{Kiểm thử và đánh giá}\label{sec:testing}
+\subsection{Phương pháp và kết quả kiểm thử}\label{sec:test-method}
+
+Bộ kiểm thử được chạy trên phiên bản nêu ở mục~\ref{sec:git-history}. Mỗi phân hệ tạo bộ dữ liệu riêng trong \code{InMemoryResearchRepository} để kiểm tra quy tắc nghiệp vụ, quyền thực hiện và các giá trị biên. Ở ca A-BRIDGE, dữ liệu về điều kiện nghiệm thu được mô phỏng để kiểm tra dịch vụ đề tài. Ca B-T20 sử dụng dịch vụ của cả hai phân hệ trên cùng một kho dữ liệu và đối chiếu nội dung báo cáo.
+
+Các ca kiểm thử nạp JSON chạy ứng dụng với tệp đặt trong thư mục tạm. Kết quả được đánh giá theo hai tiêu chí. Chương trình phải chấp nhận dữ liệu hợp lệ và báo lỗi với hồ sơ vi phạm quy tắc. Nội dung tệp phải được giữ nguyên sau mỗi lần nạp. Nhóm cũng kiểm tra thao tác trên giao diện dòng lệnh và khả năng đọc lại hồ sơ bằng bản phát hành.
+
+\begin{ReportTableHere}
+\caption{Kết quả kiểm thử của phiên bản tích hợp}\label{tab:tests-summary}
+\small\singlespacing
+\begin{tabularx}{\linewidth}{@{}L r r@{}}
+\toprule
+\textbf{Nhóm kiểm thử} & \textbf{Đạt} & \textbf{Không đạt} \\
+\midrule
+A, nhân sự, đề tài và kinh phí & 27 & 0 \\
+B, hội đồng, kết quả nghiên cứu và báo cáo & 24 & 0 \\
+Nạp và kiểm tra tệp JSON & 16 & 0 \\
+\midrule
+\textbf{Tổng} & \textbf{67} & \textbf{0} \\
+\bottomrule
+\end{tabularx}
+\end{ReportTableHere}
+
+Cả 67 ca đều đạt và chương trình kiểm thử trả mã thoát \code{0}. Hai phân hệ có mười nhóm ca mỗi bên, tương ứng dãy mã A-T01 đến A-T10 và B-T11 đến B-T20. Bộ kiểm thử còn có các ca về phân quyền, mẫu thiết kế và những tình huống cần kiểm tra riêng. Bảng~\ref{tab:test-results} trình bày các ca tiêu biểu, còn Phụ lục~\ref{app:evidence} dẫn tới nhật ký đầy đủ.
+
+{\small\singlespacing
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}P{.175\linewidth}P{.055\linewidth}P{.192\linewidth}P{.181\linewidth}P{.185\linewidth}l@{}}
+\caption{Các ca kiểm thử tiêu biểu của hai phân hệ và phần nạp JSON}\label{tab:test-results}\\
+\toprule
+\textbf{Mã ca} & \textbf{UC} & \textbf{Tình huống} & \textbf{Mong đợi} & \textbf{Quan sát} & \textbf{Kết quả}\\
+\midrule
+\endfirsthead
+\caption[]{Các ca kiểm thử tiêu biểu (tiếp theo)}\\
+\toprule
+\textbf{Mã ca} & \textbf{UC} & \textbf{Tình huống} & \textbf{Mong đợi} & \textbf{Quan sát} & \textbf{Kết quả}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+A-T01 & 01 & Dùng lại email với cách viết hoa khác. & Từ chối lưu. & Ngoại lệ nghiệp vụ. & PASS \\
+A-T03 & 02 & Ngày kết thúc trước ngày bắt đầu. & Từ chối đề xuất. & Ngoại lệ đối số. & PASS \\
+A-T05 & 03 & Duyệt khi đề tài chưa có chủ nhiệm. & Từ chối duyệt. & Ngoại lệ nghiệp vụ. & PASS \\
+A-T07 & 03 & Duyệt đề tài đã có chủ nhiệm. & Chuyển sang Active và ghi lịch sử. & Trạng thái và lịch sử đúng dự kiến. & PASS \\
+A-T10 & 04 & Phân bổ nhiều đợt từ cùng một nguồn. & Cộng tất cả các đợt. & Tổng tiền đúng dự kiến. & PASS \\
+A-BRIDGE & 06 & Đề tài đủ điều kiện nghiệm thu. & Chuyển sang Completed. & Trạng thái và lịch sử đúng dự kiến. & PASS \\
+B-T12 & 05 & Chỉ định chủ tịch hội đồng thứ hai. & Từ chối chỉ định. & Ngoại lệ nghiệp vụ. & PASS \\
+B-T14c & 06 & Chấm ở hai mức điểm biên 0 và 10. & Chấp nhận cả hai. & Lưu được cả hai giá trị. & PASS \\
+B-T17a & 06 & Đã có điểm, chưa có kết quả nghiên cứu. & Từ chối nghiệm thu. & Ngoại lệ nghiệp vụ. & PASS \\
+B-T18c & 07 & Dùng lại DOI với cách viết hoa khác. & Từ chối lưu bài mới. & Ngoại lệ nghiệp vụ. & PASS \\
+B-PAPER-SAVE & 07 & Kho giả lập báo lỗi lưu bài báo. & Báo lỗi, không có bản ghi mới. & Không có bài báo hoặc liên kết mới trong kho giả lập. & PASS \\
+B-T20 & 08 & Lập báo cáo sau khi chạy qua hai phân hệ. & Đúng tổng kinh phí và danh sách kết quả. & Số liệu và danh sách đúng dự kiến. & PASS \\
+JSON & 06, 07 & Đề tài Pending có hội đồng, liên kết hoặc sản phẩm. & Từ chối nạp tệp. & Mã thoát 1, tệp giữ nguyên. & PASS \\
+JSON & 06 & Đề tài Completed có điểm 0 và kết quả nghiên cứu. & Nạp được dữ liệu. & Mã thoát 0, tệp giữ nguyên. & PASS \\
+\end{longtable}
+}
+
+\subsection{Kịch bản trình diễn}\label{sec:demo-a}
+
+Nhóm thực hiện kịch bản trên bản phát hành của phiên bản tích hợp, bắt đầu từ dữ liệu mẫu của hai phân hệ. Mỗi lượt mở ứng dụng, thực hiện một nhóm thao tác rồi thoát. Các lượt sau dùng lại tệp đã lưu. Bảng~\ref{tab:demo-workflow} tóm tắt quá trình hình thành hồ sơ P003. Tệp \code{demo-full-console.txt} lưu dữ liệu nhập và kết quả hiển thị của cả 39 lượt.
+
+{\small\singlespacing
+\begin{longtable}{@{}P{.13\linewidth}P{.40\linewidth}P{.37\linewidth}@{}}
+\caption{Kịch bản tích hợp trên đề tài P003}\label{tab:demo-workflow}\\
+\toprule
+\textbf{Menu} & \textbf{Vai trò và dữ liệu chính} & \textbf{Kết quả} \\
+\midrule
+\endfirsthead
+\caption[]{Kịch bản tích hợp (tiếp theo)}\\
+\toprule
+\textbf{Menu} & \textbf{Vai trò và dữ liệu chính} & \textbf{Kết quả} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+10, 3, 4 & Chuyên viên xem nhiệm kỳ của D01, tạo đơn vị D03 và hồ sơ R005 thuộc D03. & Hồ sơ R005 được dùng khi phân công thành viên và ghi tác giả bài báo. \\
+2, 5 & Nhà nghiên cứu R001 đề xuất P003 thuộc loại C01, từ 2026-01-01 đến 2026-12-31. & Đề tài ở trạng thái Pending. \\
+2, 7, 6, 7 & Chuyên viên thử duyệt, sau đó gán R001 làm chủ nhiệm và R005 làm thành viên rồi duyệt lại. & Lượt đầu bị từ chối. Sau khi có chủ nhiệm, đề tài chuyển sang Active. \\
+8, 9 & Chuyên viên thêm nguồn F03 và phân bổ hai đợt. Đợt A004 từ F01 ngày 2026-02-01, đợt A005 từ F03 ngày 2026-06-01. & Hai đợt lần lượt là 100.000.000 và 150.000.000 đồng. \\
+13, 14 & Chuyên viên lập HD03 cho P003 ngày 2026-11-22, chỉ định R002 làm chủ tịch và R003 làm ủy viên. & Hội đồng và vai trò của hai thành viên được lưu. \\
+2, 15 & Chủ tịch R002 chấm 0 rồi cập nhật thành 8,5. & Cả hai giá trị đều được ghi nhận. Điểm 0 đã đủ để khóa danh sách hội đồng ở lần ghi đầu tiên. \\
+2, 17, 18 & R001 ghi bài báo với hai tác giả theo thứ tự R001, R005 và chọn R001 làm tác giả liên hệ. R001 ghi sản phẩm loại DT02, số lượng 2. & Bài báo được liên kết với P003. Sản phẩm được ghi thành một bản ghi có số lượng 2. \\
+\end{longtable}
+}
+
+Hình~\ref{fig:console-p003} đối chiếu hai đoạn console của kịch bản.
+
+\begin{ReportFigureHere}
+  \caption{Console từ chối hoàn thành và tra cứu lại đề tài P003}
+  \label{fig:console-p003}
+  {\small\noindent\textbf{Lượt 29. Xác nhận hoàn thành khi còn thiếu đầu ra}\par}
+  \VerbatimInput[frame=single,framerule=.35pt,fontsize=\ReportCodeSize,firstline=1996,lastline=1996]{report/evidence/demo-full-console.txt}
+  {\small\noindent\textbf{Lượt 39. Mở lại và tra cứu hồ sơ đã hoàn thành}\par}
+  \VerbatimInput[frame=single,framerule=.35pt,fontsize=\ReportCodeSize,firstline=29,lastline=31]{report/evidence/reopened-console.txt}
+  \ReportNote{Trích nguyên văn nhật ký console của phiên bản tích hợp, có ngắt dòng theo khổ giấy.}
+\end{ReportFigureHere}
+
+\label{ev:demo-reopen}P003 đã có điểm ở lượt 29 nhưng thiếu đầu ra, nên chương trình từ chối và tệp JSON giữ nguyên. Sau khi PA03 và SP03 được ghi nhận, chuyên viên hoàn thành đề tài ở lượt 33. Lượt 39 đọc lại trạng thái, điểm, kinh phí và hai kết quả đã lưu.
+
+Trong báo cáo theo đề tài, SP03 đóng góp một bản ghi. Theo loại, SP03 đóng góp hai đơn vị DT02. Nhật ký cũng ghi nhận việc từ chối bổ sung kinh phí, sửa điểm và ghi thêm đầu ra sau khi hoàn thành. Cả 39 lượt đều khớp dự kiến.

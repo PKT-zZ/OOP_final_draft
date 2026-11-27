@@ -1,0 +1,16 @@
+\ReportChapter{Đóng gói và phối hợp nhóm}\label{sec:delivery}
+\subsection{Đóng gói và kiểm tra triển khai}\label{sec:packaged-app}
+Nhóm dùng .NET SDK 8.0.428 để biên dịch ứng dụng và chương trình kiểm thử với hai cấu hình Debug và Release. Cả hai lượt biên dịch đều ghi nhận 0 cảnh báo và 0 lỗi. Gói phát hành được tạo từ cấu hình Release cho Windows x64. Máy chạy cần cài .NET 8 Runtime x64 \ReportCite{microsoft2025}.
+
+Thư mục phát hành chứa tệp thực thi \code{QLNCKH_OOP_FINAL.exe}, thư viện và cấu hình .NET, cấu hình ứng dụng \code{config/appsettings.json} và dữ liệu mẫu \code{Data/seed.json}. Khi chưa có tệp làm việc, chương trình tạo \code{data/nckh.json} từ dữ liệu mẫu. Chương trình xác định đường dẫn tương đối dựa trên vị trí tệp thực thi. Thư mục đó phải cho phép ghi để lưu kết quả.
+
+Để kiểm tra cách xác định đường dẫn, nhóm chép gói sang một thư mục mới có tên tiếng Việt rồi chạy tệp thực thi từ một thư mục làm việc khác. Kịch bản ở mục~\ref{sec:demo-a} kết thúc bằng việc mở lại ứng dụng và đọc được hồ sơ đã lưu. Phạm vi kiểm tra triển khai là các thư mục khác nhau trên cùng một máy Windows. Lệnh thực hiện và nhật ký được nêu ở Phụ lục~\ref{app:evidence}.
+
+\subsection{Phối hợp qua Git và hợp đồng}\label{sec:git-history}
+Toàn phát triển phân hệ A trên nhánh \code{feature/projects-funding}. Phân hệ B của Hoàng được phát triển trên nhánh \code{feature/evaluation-outputs}. Khi tích hợp, hai thành viên thống nhất mã đối tượng và sử dụng chung một kho dữ liệu. Hai giao diện dùng chung quy định cách kiểm tra điều kiện nghiệm thu và cách cung cấp số liệu cho báo cáo, như ở mục~\ref{sec:implementation-integration} và \ref{sec:pattern-strategy}.
+
+Phiên bản tích hợp được kiểm thử và trình diễn là commit sau khi hợp nhất PR~\#10 vào nhánh \code{main}. Mã commit là \href{https://github.com/PKT-zZ/QLNCKH_OOP_FINAL/commit/28fb531f270ac358725c6c35e261be164b4016f6}{\code{28fb531f270ac358725c6c35e261be164b4016f6}}.
+
+Các commit \code{1bf9530}, \code{3c71917} và \code{67a80f9} lần lượt ghi nhận việc hiện thực nghiệp vụ, lưu trữ và menu của phân hệ A, áp dụng Factory Method và cung cấp dữ liệu nghiệm thu cho dịch vụ đề tài. Commit \code{df5884e} hoàn thiện các luồng nghiệp vụ sau khi tích hợp.
+
+Tại phiên bản trên, \code{git shortlog -sne --no-merges HEAD} ghi nhận 22 commit sau khi loại các commit hợp nhất. Hai cách ghi tên tác giả có cùng địa chỉ Git đều được tính cho Toàn, tổng cộng 10 commit, gồm 1 commit khởi tạo và 9 commit về nghiệp vụ và tích hợp. Hoàng có 12 commit.

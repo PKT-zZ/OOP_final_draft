@@ -1,0 +1,33 @@
+% !TeX program = xelatex
+\documentclass[12pt,a4paper]{article}
+\input{report/format}
+\input{report/metadata}
+\input{report/references}
+\hypersetup{pdftitle={\ReportTitle}}
+
+\begin{document}
+% Nếu bổ sung bìa sau này, đặt \ReportCover{report/cover.tex} tại đây.
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\ReportListOfFigures
+\ReportListOfTables
+\clearpage
+\input{report/preface}
+
+\clearpage
+\pagenumbering{arabic}
+\input{report/introduction}
+\input{report/body}
+\input{report/delivery}
+\input{report/conclusion}
+
+\ReportBibliography
+
+\appendix
+\ReportAppendix{Minh chứng và hướng dẫn chạy}\label{app:evidence}
+\input{report/run-guide}
+\Needspace{12\baselineskip}
+\subsection{Minh chứng bổ sung}\label{app:evidence-details}
+\input{report/evidence}
+\end{document}

@@ -1,0 +1,70 @@
+PASS A-T01: Email nhà nghiên cứu không được trùng
+PASS A-T02: Tên đề tài không được rỗng
+PASS A-T03: Ngày kết thúc không trước ngày bắt đầu
+PASS A-T04: Không gán cùng người hai lần
+PASS A-T05: Không duyệt đề tài thiếu chủ nhiệm
+PASS A-T06: Không gán chủ nhiệm thứ hai
+PASS A-T07: Duyệt đúng trạng thái và lịch sử
+PASS A-T08: Không duyệt hai lần
+PASS A-T09: Số tiền phân bổ phải dương
+PASS A-T10: Nhiều đợt cùng nguồn được cộng đúng
+PASS A-FUND-COMPLETED: Chốt kinh phí khi đề tài hoàn thành
+PASS A-PERM: Service tự kiểm tra vai trò
+PASS A-BRIDGE: Hoàn thành qua bằng chứng do B cung cấp
+PASS A-SOURCE: Strategy cộng kinh phí theo nguồn
+PASS A-VALID: Dữ liệu sai không làm thay đổi đối tượng
+PASS A-ID-PROJECT-SPACE: Mã đề tài trùng có khoảng trắng giữ nguyên hồ sơ
+PASS A-ID-PROJECT-CASE: Mã đề tài trùng khác hoa thường giữ nguyên hồ sơ
+PASS A-ID-PROJECT-NEW: Mã đề tài mới được loại khoảng trắng và giữ nguyên hoa thường
+PASS A-ID-FUND-SAME: Mã phân bổ trùng trong cùng đề tài giữ nguyên tổng
+PASS A-ID-FUND-CROSS: Mã phân bổ trùng có khoảng trắng ở đề tài khác giữ nguyên tổng
+PASS A-ID-FUND-CASE: Mã phân bổ khác hoa thường ở đề tài khác giữ nguyên tổng
+PASS A-ID-FUND-NEW: Hai đợt hợp lệ cùng nguồn được chuẩn hóa và cộng đúng
+PASS A-ID-SOURCE-SPACE: Mã nguồn trùng có khoảng trắng giữ nguyên hồ sơ
+PASS A-REVIEW-DEPARTMENT: Cập nhật mã đơn vị có khoảng trắng giữ nguyên ngày thành lập
+PASS A-REVIEW-RESEARCHER: Cập nhật mã nhà nghiên cứu có khoảng trắng giữ nguyên hồ sơ
+PASS A-REVIEW-FUND-RANGE: Từ chối khoản cấp làm tổng kinh phí vượt phạm vi decimal
+PASS A-REVIEW-STATE: Gọi sai đối tượng State không làm đổi trạng thái hoặc lịch sử
+Kết quả: 27/27 ca đạt.
+PASS B-T11: Lập hội đồng hợp lệ thành công
+PASS B-T12: Gán Chairman thứ hai bị từ chối
+PASS B-T13: Một nhà nghiên cứu lặp trong hội đồng bị từ chối
+PASS B-ROSTER-LOCK: Điểm 0 cũng khóa danh sách hội đồng
+PASS B-T14a: Điểm -0.1 bị từ chối
+PASS B-T14b: Điểm 10.1 bị từ chối
+PASS B-T14c: Điểm biên 0 và 10 được chấp nhận
+PASS B-T15: Người không phải Chairman của hội đồng ghi điểm bị từ chối
+PASS B-T16: Hội đồng thứ hai cho cùng đề tài bị từ chối
+PASS B-T17a: Hoàn thành đề tài chưa có đầu ra bị từ chối
+PASS B-T17b: Hoàn thành đề tài chưa có điểm bị từ chối
+PASS B-T18a: Thứ tự tác giả trùng bị từ chối
+PASS B-T18b: Hai tác giả liên hệ bị từ chối
+PASS B-T18c: DOI trùng (khác hoa thường) bị từ chối
+PASS B-T18d: Bài báo không có tác giả liên hệ bị từ chối
+PASS B-T19a: Số lượng sản phẩm 0 bị từ chối
+PASS B-T19b: Số lượng sản phẩm -1 bị từ chối
+PASS B-T20: Báo cáo sau luồng liên thông đúng tổng tiền và danh sách đầu ra
+PASS B-PERM: Service tự kiểm tra vai trò UC05-08
+PASS B-FACTORY: Hai creator tạo hai lớp con, đa hình GetDisplaySummary
+PASS B-PAPER-SAVE: Ghi bài báo thất bại không tạo bài hoặc liên kết riêng lẻ
+PASS B-STRATEGY-TYPE: Strategy theo loại gom đúng bài báo và sản phẩm
+PASS B-STRATEGY-TYPE-RANGE: Tổng sản phẩm theo loại có thể vượt giới hạn int
+PASS B-LOOKUP: Tra cứu theo mã và trạng thái
+Kết quả B: 24/24 ca đạt.
+PASS JSON: Seed tích hợp
+PASS JSON: Thiếu toàn bộ khóa
+PASS JSON: Thiếu riêng danh mục nguồn
+PASS JSON: Mảng có giá trị null
+PASS JSON: Đủ khóa, các mảng rỗng
+PASS JSON: Dữ liệu A cũ trước nghiệm thu
+PASS JSON: Completed thiếu điểm
+PASS JSON: Completed thiếu đầu ra
+PASS JSON: Completed có điểm 0 và đầu ra
+PASS JSON: Pending có hội đồng
+PASS JSON: Pending có liên kết bài báo
+PASS JSON: Pending có sản phẩm
+PASS JSON: Có bài báo thiếu liên kết dù bài khác đã liên kết
+PASS JSON: Tràn tổng của một đề tài
+PASS JSON: Tràn tổng giữa hai đề tài
+PASS JSON: Tổng đúng bằng giới hạn decimal
+Kết quả JSON: 16/16 ca đạt.

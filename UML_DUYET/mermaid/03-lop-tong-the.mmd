@@ -1,0 +1,53 @@
+---
+config:
+  layout: elk
+  themeVariables:
+    fontSize: 19px
+  elk:
+    layeringStrategy: COFFMAN_GRAHAM
+    layeringLayerBound: 5
+    lineHops: gap
+  themeCSS: |
+    .edgeTerminals.edgeTerminals { font-size: 18px !important; }
+    .edgeTerminals[transform^="translate(740.826"], .edgeTerminals[transform^="translate(710.032"] { translate: -2px 17px; }
+    .edgeTerminals[transform^="translate(653.222"], .edgeTerminals[transform^="translate(622.429"] { translate: 0 5px; }
+  class:
+    nodeSpacing: 12
+    rankSpacing: 22
+---
+classDiagram
+    direction TB
+    accTitle: Mô hình lớp nghiệp vụ tổng thể
+    accDescr: Mười sáu kiểu nghiệp vụ cụ thể, gồm record ProjectStatusHistory, và lớp trừu tượng ResearchOutput. Hình thể hiện các liên kết chính. Bội số theo hồ sơ hợp lệ đã lưu.
+
+    %% Kế thừa từ docs/uml.md §2. Các hình 04–06 trình bày thành viên lớp
+    %% và các liên kết chi tiết của DepartmentHeadTerm, CouncilMembership, PaperAuthor.
+    %% FundingAllocation được đưa vào danh sách đề tài sau khi tạo ở FundingService.
+    %% Liên kết mô tả bội số và mã tham chiếu trong dữ liệu nghiệp vụ.
+    class ProjectStatusHistory {
+        <<record>>
+    }
+    class ResearchOutput {
+        <<abstract>>
+    }
+
+    Researcher "0..*" -- "1" Department
+    Department "1" -- "0..*" DepartmentHeadTerm
+
+    ProjectCategory "1" -- "0..*" ResearchProject
+    ResearchProject "1" *-- "0..*" ProjectParticipation
+    ResearchProject "1" *-- "0..2" ProjectStatusHistory
+    ProjectParticipation "0..*" -- "1" Researcher
+    FundingAllocation "0..*" -- "1" ResearchProject
+    FundingSource "1" -- "0..*" FundingAllocation
+
+    ResearchProject "1" -- "0..1" EvaluationCouncil
+    EvaluationCouncil "1" *-- "0..*" CouncilMembership
+
+    ResearchOutput <|-- ProjectDeliverable
+    ResearchOutput <|-- Paper
+    ResearchProject "1" -- "0..*" ProjectDeliverable
+    ProjectDeliverable "0..*" -- "1" DeliverableType
+    Paper "1" *-- "1..*" PaperAuthor
+    ProjectPaperLink "0..*" -- "1" ResearchProject
+    ProjectPaperLink "1..*" -- "1" Paper

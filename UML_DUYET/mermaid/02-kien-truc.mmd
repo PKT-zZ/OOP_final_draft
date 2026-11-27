@@ -1,0 +1,51 @@
+---
+config:
+  layout: elk
+  themeCSS: |
+    .cluster-label { translate: -38px 0; }
+  elk:
+    lineHops: gap
+  class:
+    nodeSpacing: 26
+    rankSpacing: 33
+---
+classDiagram
+    direction TB
+    accTitle: Kiến trúc ba tầng của hệ thống QLNCKH
+    accDescr: Sơ đồ lớp chọn lọc theo tầng. ConsoleMenu tạo và truy vấn trực tiếp kho JSON. ProjectService và EvaluationService là các dịch vụ đại diện. InMemoryResearchRepository hiện thực ba giao diện thuộc tầng Business. JsonResearchRepository kế thừa InMemoryResearchRepository.
+
+    %% Kế thừa từ docs/uml.md §1 và §4.
+    %% ConsoleMenu.cs:12–29,105,149; InMemoryResearchRepository.cs:7; JsonResearchRepository.cs:9.
+    namespace Presentation {
+        class ConsoleMenu
+    }
+
+    namespace Business {
+        class ProjectService
+        class EvaluationService
+        class IPeopleRepository {
+            <<interface>>
+        }
+        class IProjectRepository {
+            <<interface>>
+        }
+        class IResultRepository {
+            <<interface>>
+        }
+    }
+
+    namespace Data {
+        class JsonResearchRepository
+        class InMemoryResearchRepository
+    }
+
+    ConsoleMenu ..> ProjectService : gọi nghiệp vụ
+    ConsoleMenu ..> EvaluationService
+    ConsoleMenu --> JsonResearchRepository : khởi tạo _data, tra cứu
+    ProjectService --> IPeopleRepository
+    ProjectService --> IProjectRepository
+    EvaluationService --> IResultRepository
+    JsonResearchRepository --|> InMemoryResearchRepository
+    InMemoryResearchRepository ..|> IPeopleRepository
+    InMemoryResearchRepository ..|> IProjectRepository
+    InMemoryResearchRepository ..|> IResultRepository
